@@ -1,0 +1,24 @@
+uint8 NOT_INITIALIZED=0
+uint8 INITIALIZING=1
+uint8 READY=2
+uint8 STALE=3
+uint8 ERROR=4
+
+uint64 timestamp_us
+uint32 uptime_ms
+uint8 conductivity_state
+uint8 ph_state
+uint8 temperature_state
+uint8 dissolved_oxygen_state
+uint8 sensor_power_monitor_state
+uint8 thruster_power_monitor_state
+bool i2c_bus1_healthy
+bool i2c_bus2_healthy
+bool mosfet_conductivity_on
+bool mosfet_ph_on
+bool mosfet_temperature_on
+bool mosfet_do_on
+uint32 i2c_bus1_error_count
+uint32 i2c_bus2_error_count
+uint32 sensor_read_error_count
+uint32 power_transition_error_count

@@ -1,0 +1,18 @@
+uint8 WAITING_AGENT=0
+uint8 AGENT_AVAILABLE=1
+uint8 CONNECTED=2
+uint8 DISCONNECTED=3
+
+uint8 connection_state
+bool agent_connected
+bool host_heartbeat_healthy
+uint32 host_heartbeat_age_ms
+uint32 connection_count
+uint32 disconnect_count
+uint32 reconnect_count
+uint32 host_heartbeat_timeout_count
+uint32 ping_failures
+uint32 publish_failures
+uint32 executor_failures
+uint32 entity_create_failures
+uint32 entity_destroy_failures

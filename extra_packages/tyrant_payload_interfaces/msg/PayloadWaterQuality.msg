@@ -1,0 +1,24 @@
+uint8 NOT_INITIALIZED=0
+uint8 INITIALIZING=1
+uint8 READY=2
+uint8 STALE=3
+uint8 ERROR=4
+
+uint32 sequence
+uint64 timestamp_us
+float32 conductivity_us_cm
+float32 ph
+float32 temperature_c
+float32 dissolved_oxygen_mg_l
+bool conductivity_valid
+bool ph_valid
+bool temperature_valid
+bool dissolved_oxygen_valid
+uint8 conductivity_state
+uint8 ph_state
+uint8 temperature_state
+uint8 dissolved_oxygen_state
+uint32 conductivity_age_ms
+uint32 ph_age_ms
+uint32 temperature_age_ms
+uint32 dissolved_oxygen_age_ms
