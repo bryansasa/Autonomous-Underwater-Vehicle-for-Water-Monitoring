@@ -179,6 +179,8 @@
  /home/bryan/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32s3/include/esp_hw_support/include/soc/esp32/spiram.h \
  /home/bryan/.platformio/packages/framework-arduinoespressif32/cores/esp32/io_pin_remap.h \
  /home/bryan/.platformio/packages/framework-arduinoespressif32/cores/esp32/Arduino.h \
+ /home/bryan/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src/Wire.h \
+ /home/bryan/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal.h \
  .pio/libdeps/esp32-s3-devkitm-1/micro_ros_platformio/platform_code/micro_ros_platformio.h \
  .pio/libdeps/esp32-s3-devkitm-1/micro_ros_arduino/src/uxr/client/transport.h \
  .pio/libdeps/esp32-s3-devkitm-1/micro_ros_arduino/src/uxr/client/config.h \

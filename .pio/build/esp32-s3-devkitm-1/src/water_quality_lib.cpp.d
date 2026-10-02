@@ -1,6 +1,5 @@
 .pio/build/esp32-s3-devkitm-1/src/water_quality_lib.cpp.o: \
  src/water_quality_lib.cpp include/water_quality_lib.h \
- include/sensor_types.h \
  /home/bryan/.platformio/packages/framework-arduinoespressif32/cores/esp32/Arduino.h \
  /home/bryan/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp_arduino_version.h \
  /home/bryan/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32s3/include/freertos/include/freertos/FreeRTOS.h \
@@ -182,4 +181,13 @@
  /home/bryan/.platformio/packages/framework-arduinoespressif32/cores/esp32/io_pin_remap.h \
  /home/bryan/.platformio/packages/framework-arduinoespressif32/cores/esp32/Arduino.h \
  /home/bryan/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src/Wire.h \
- /home/bryan/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal.h
+ /home/bryan/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal.h \
+ .pio/libdeps/esp32-s3-devkitm-1/micro_ros_platformio/libmicroros/include/tyrant_payload_interfaces/msg/payload_water_quality.h \
+ .pio/libdeps/esp32-s3-devkitm-1/micro_ros_platformio/libmicroros/include/tyrant_payload_interfaces/msg/detail/payload_water_quality__struct.h \
+ .pio/libdeps/esp32-s3-devkitm-1/micro_ros_platformio/libmicroros/include/tyrant_payload_interfaces/msg/detail/payload_water_quality__functions.h \
+ .pio/libdeps/esp32-s3-devkitm-1/micro_ros_arduino/src/rosidl_runtime_c/visibility_control.h \
+ .pio/libdeps/esp32-s3-devkitm-1/micro_ros_platformio/libmicroros/include/tyrant_payload_interfaces/msg/rosidl_generator_c__visibility_control.h \
+ .pio/libdeps/esp32-s3-devkitm-1/micro_ros_platformio/libmicroros/include/tyrant_payload_interfaces/msg/detail/payload_water_quality__type_support.h \
+ .pio/libdeps/esp32-s3-devkitm-1/micro_ros_arduino/src/rosidl_typesupport_interface/macros.h \
+ .pio/libdeps/esp32-s3-devkitm-1/micro_ros_arduino/src/rosidl_runtime_c/message_type_support_struct.h \
+ include/sensor_types.h
