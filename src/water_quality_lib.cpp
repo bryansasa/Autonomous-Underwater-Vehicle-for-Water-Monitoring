@@ -39,7 +39,7 @@ void WaterQualityManager::begin(uint8_t sda_pin, uint8_t scl_pin) {
 
     // Setup Suhu
     pinMode(TEMP_PIN, INPUT);
-    analogReadResolution(!2);
+    analogReadResolution(12);
     temp_timer = millis();
 }
 

@@ -252,6 +252,7 @@
  .pio/libdeps/esp32-s3-devkitm-1/micro_ros_arduino/src/rmw_microros/timing.h \
  .pio/libdeps/esp32-s3-devkitm-1/micro_ros_arduino/src/rmw_microros/custom_transport.h \
  .pio/libdeps/esp32-s3-devkitm-1/micro_ros_platformio/platform_code/arduino/serial/micro_ros_transport.h \
+ include/ea_dsra.h include/sensor_types.h \
  .pio/libdeps/esp32-s3-devkitm-1/micro_ros_arduino/src/rcl/rcl.h \
  .pio/libdeps/esp32-s3-devkitm-1/micro_ros_arduino/src/rcl/init.h \
  .pio/libdeps/esp32-s3-devkitm-1/micro_ros_arduino/src/rcl/allocator.h \
@@ -356,6 +357,6 @@
  .pio/libdeps/esp32-s3-devkitm-1/micro_ros_platformio/libmicroros/include/tyrant_payload_interfaces/msg/detail/payload_health__struct.h \
  .pio/libdeps/esp32-s3-devkitm-1/micro_ros_platformio/libmicroros/include/tyrant_payload_interfaces/msg/detail/payload_health__functions.h \
  .pio/libdeps/esp32-s3-devkitm-1/micro_ros_platformio/libmicroros/include/tyrant_payload_interfaces/msg/detail/payload_health__type_support.h \
- include/water_quality_lib.h include/sensor_types.h \
- include/connection_health.h include/power_controller.h \
- include/payload_monitor.h include/power_controller.h
+ include/water_quality_lib.h include/connection_health.h \
+ include/power_controller.h include/payload_monitor.h \
+ include/power_controller.h

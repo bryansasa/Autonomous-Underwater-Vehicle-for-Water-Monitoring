@@ -1,6 +1,7 @@
 #include <Arduino.h>
 #include <Wire.h>
 #include <micro_ros_platformio.h>
+#include "ea_dsra.h"
 
 #include <rcl/rcl.h>
 #include <rclc/rclc.h>
@@ -60,6 +61,12 @@ std_msgs__msg__UInt32 host_hb_msg;
 uint32_t wq_sequence = 0;
 uint32_t hb_counter = 0;
 uint32_t tick_10hz_counter = 0;
+
+// Algoritma DSRA
+EaDsraController ea_dsra;
+unsigned long next_sampling_deadline = 0;
+
+// Flag untuk menandai status koneksi micro-ROS
 bool micro_ros_connected = false;
 
 // Subscription Callbacks
@@ -189,6 +196,8 @@ void destroy_entities() {
 }
 
 void setup() {
+    // Algoritma EA-DSRA
+    ea_dsra.begin(25.2f, 19.8f, 30.0f, 5.0f, 2.0f, 1000, 5000);
     Serial.begin(115200);
     delay(2500);
 
