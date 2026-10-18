@@ -67,5 +67,14 @@ logs/*.txt
 *~
 .DS_Store
 Thumbs.db
-ehthumbs.db
 Desktop.ini
+
+# --- Additional Standalone Folders (Keep local, exclude from repo) ---
+GUI Kalibrasi/
+simulasi_ea_dsra/
+ros2_ws/
+*.sh
+generate_pdf_plan.py
+teensy_ros2_architecture.png
+PANDUAN_GAZEBO_BLACK_SCREEN_UBUNTU.html
+
