@@ -1,0 +1,9 @@
+  PID COMMAND         COMMAND
+    1 docker-init     /sbin/docker-init -- /bin/bash /deployment/mission_entrypoint.sh
+    7 python3         python3 /deployment/run_mission_companion.py
+   31 tyrant_plant_si /usr/bin/python3 /mission_ws/install/tyrant_sim/lib/tyrant_sim/tyrant_plant_sim --ros-args --params-file /mission_ws/install/tyrant_sim/share/tyrant_sim/config/reduced_plant.yaml
+   32 mission_host    /usr/bin/python3 /mission_ws/install/tyrant_mission_host/lib/tyrant_mission_host/mission_host --ros-args -p plan:=/mission_ws/src/tyrant_mission_host/config/two_depth_hil_sampling_020m.yaml -p payload_namespace:=/tyrant/payload_sim -p teensy_simulated:=true -p publish_heartbeats:=true -p output_dir:=/mission_ws/bags/missions
+   33 micro_ros_agent /ws/install/micro_ros_agent/lib/micro_ros_agent/micro_ros_agent serial --dev /host-dev/tyrant-teensy -b 115200 -v4
+  141 python3         /usr/bin/python3 -c from ros2cli.daemon.daemonize import main; main() --name ros2-daemon --ros-domain-id 0 --rmw-implementation rmw_fastrtps_cpp
+  238 micro_ros_agent /ws/install/micro_ros_agent/lib/micro_ros_agent/micro_ros_agent serial --dev /host-dev/tyrant-esp -b 115200 -v4
+  262 ps              ps -eo pid,comm,args

@@ -1,0 +1,2 @@
+# Teensy USB Serial, verified board serial 13843280, interface 00.
+SUBSYSTEM=="tty", ENV{ID_VENDOR_ID}=="16c0", ENV{ID_MODEL_ID}=="0483", ENV{ID_SERIAL_SHORT}=="13843280", ENV{ID_USB_INTERFACE_NUM}=="00", SYMLINK+="tyrant-teensy"

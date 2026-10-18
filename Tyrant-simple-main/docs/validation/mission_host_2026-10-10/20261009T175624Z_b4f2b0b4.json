@@ -1,0 +1,114 @@
+{
+  "session_id": "20261009T175624Z_b4f2b0b4",
+  "duration_s": 98.458395442,
+  "message_count": 18102,
+  "esp_heartbeat_gap_s": 53.093058557,
+  "gap_start_s": 36.195060042,
+  "gap_end_s": 89.288118599,
+  "qualified_rows_during_gap": 0,
+  "last_water_before_gap": {
+    "t": 1791568619997242265,
+    "sequence": 6062,
+    "timestamp_us": 6355461533,
+    "ec_valid": true,
+    "ec_state": 2
+  },
+  "first_water_after_gap": {
+    "t": 1791568676310975312,
+    "sequence": 6086,
+    "timestamp_us": 6411776491,
+    "ec_valid": false,
+    "ec_state": 4
+  },
+  "teensy_communication": {
+    "healthy": 491
+  },
+  "esp_diagnostics_first": {
+    "connection_count": 5,
+    "disconnect_count": 4,
+    "reconnect_count": 4,
+    "host_heartbeat_healthy": true
+  },
+  "esp_diagnostics_last": {
+    "connection_count": 6,
+    "disconnect_count": 5,
+    "reconnect_count": 5,
+    "host_heartbeat_healthy": true
+  },
+  "result": {
+    "mission_id": "two_depth_hil_sampling_020m",
+    "phase": "COMPLETE",
+    "step_id": "depth_3",
+    "counts": {
+      "conductivity": 0,
+      "ph": 1,
+      "temperature": 1,
+      "dissolved_oxygen": 1
+    },
+    "payload_boot": 0,
+    "result": "All host steps finished",
+    "step_results": [
+      {
+        "step_id": "depth_1",
+        "sampling": true,
+        "complete": true,
+        "reason": "Per-sensor valid sample targets met",
+        "counts": {
+          "conductivity": 3,
+          "ph": 3,
+          "temperature": 3,
+          "dissolved_oxygen": 3
+        }
+      },
+      {
+        "step_id": "forward",
+        "sampling": false,
+        "complete": true,
+        "reason": "Motion completed",
+        "counts": {
+          "conductivity": 0,
+          "ph": 0,
+          "temperature": 0,
+          "dissolved_oxygen": 0
+        }
+      },
+      {
+        "step_id": "right",
+        "sampling": false,
+        "complete": true,
+        "reason": "Motion completed",
+        "counts": {
+          "conductivity": 0,
+          "ph": 0,
+          "temperature": 0,
+          "dissolved_oxygen": 0
+        }
+      },
+      {
+        "step_id": "heading_left",
+        "sampling": false,
+        "complete": true,
+        "reason": "Motion completed",
+        "counts": {
+          "conductivity": 0,
+          "ph": 0,
+          "temperature": 0,
+          "dissolved_oxygen": 0
+        }
+      },
+      {
+        "step_id": "depth_3",
+        "sampling": true,
+        "complete": false,
+        "reason": "Sampling/stabilization timeout",
+        "counts": {
+          "conductivity": 0,
+          "ph": 1,
+          "temperature": 1,
+          "dissolved_oxygen": 1
+        }
+      }
+    ],
+    "all_sampling_points_complete": false
+  }
+}

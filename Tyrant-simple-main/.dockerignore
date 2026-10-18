@@ -1,0 +1,13 @@
+.git
+**/.pio
+**/.pio-core
+**/.native-test
+**/host_ws
+**/__pycache__
+**/.pytest_cache
+**/build
+**/install
+**/log
+**/bags
+**/*.db3
+**/*.mcap

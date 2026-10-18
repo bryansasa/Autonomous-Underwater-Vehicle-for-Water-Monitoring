@@ -1,0 +1,78 @@
+{
+    "target_ip": "192.168.1.170",
+    "target_port": 9000,
+    "protocol": "TCP",
+    "usb_port": "COM3",
+    "baudrate": 115200,
+    "theme": "Dark Mode",
+    "record_path": "./data_logs",
+    "record_filename": "saguling_mission",
+    "record_interval_s": 1.0,
+    "sd_filename": "data_backup.csv",
+    "download_path": "./downloads",
+    "joystick_enabled": true,
+    "joystick_deadzone": 0.15,
+    "joystick_max_speed": 400,
+    "water_quality_limits": {
+        "ph": {
+            "min": 6.0,
+            "max": 9.0,
+            "optimal_min": 6.5,
+            "optimal_max": 8.5
+        },
+        "do": {
+            "min": 4.0,
+            "critical_min": 2.0,
+            "optimal": 6.0
+        },
+        "temperature": {
+            "min": 20.0,
+            "max": 32.0
+        },
+        "conductivity": {
+            "min": 50.0,
+            "max": 1000.0
+        }
+    },
+    "battery_limits": {
+        "v_max": 25.2,
+        "v_min": 19.8,
+        "soc_warning": 30.0,
+        "soc_critical": 20.0
+    },
+    "lmpc_defaults": {
+        "np": 12,
+        "nc": 3,
+        "q_z": 100.0,
+        "q_yaw": 50.0,
+        "r_thrust": 0.1,
+        "max_thrust_pwm_delta": 300
+    },
+    "ea_dsra_defaults": {
+        "soc_threshold": 35.0,
+        "temp": {
+            "e": 0.2,
+            "s": 200,
+            "tmin": 1.0,
+            "tmax": 30.0
+        },
+        "do": {
+            "e": 0.15,
+            "s": 150,
+            "tmin": 1.0,
+            "tmax": 60.0
+        },
+        "ph": {
+            "e": 0.05,
+            "s": 300,
+            "tmin": 1.0,
+            "tmax": 60.0
+        },
+        "cond": {
+            "e": 5.0,
+            "s": 100,
+            "tmin": 1.0,
+            "tmax": 45.0
+        }
+    }
+}

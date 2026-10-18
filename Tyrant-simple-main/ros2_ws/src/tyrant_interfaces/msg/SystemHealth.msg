@@ -1,0 +1,6 @@
+bool communication_healthy
+bool estimator_ready
+bool autonomy_ready
+bool propulsion_allowed
+uint8 current_mode
+uint32 host_heartbeat_age_ms

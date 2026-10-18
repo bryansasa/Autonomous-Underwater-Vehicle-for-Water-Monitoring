@@ -1,0 +1,52 @@
+{
+  "session_id": "20261009T172737Z_6a8f85a6",
+  "first_invalid_at_s": 32.121756221,
+  "first_disabled_zero_command_delay_s": 0.004829848,
+  "safe_mode_delay_s": 2.192766336,
+  "host_failed_delay_s": 2.31323434,
+  "thruster_messages_after_invalid_200ms": 192,
+  "nonzero_or_enabled_after_invalid_200ms": 0,
+  "qualified_sample_rows": 12,
+  "qualified_after_invalid": 0,
+  "result": {
+    "mission_id": "two_depth_hil_sampling_020m",
+    "phase": "FAILED",
+    "step_id": "right",
+    "counts": {
+      "conductivity": 0,
+      "ph": 0,
+      "temperature": 0,
+      "dissolved_oxygen": 0
+    },
+    "payload_boot": 0,
+    "result": "mode rejected, reason=5",
+    "step_results": [
+      {
+        "step_id": "depth_1",
+        "sampling": true,
+        "complete": true,
+        "reason": "Per-sensor valid sample targets met",
+        "counts": {
+          "conductivity": 3,
+          "ph": 3,
+          "temperature": 3,
+          "dissolved_oxygen": 3
+        }
+      },
+      {
+        "step_id": "forward",
+        "sampling": false,
+        "complete": true,
+        "reason": "Motion completed",
+        "counts": {
+          "conductivity": 0,
+          "ph": 0,
+          "temperature": 0,
+          "dissolved_oxygen": 0
+        }
+      }
+    ],
+    "all_sampling_points_complete": null
+  },
+  "finding": "Propulsion disabled on invalid state; host only fails when next AUTO request rejected after timed surge completed; immediate host invalid-state abort not yet implemented"
+}

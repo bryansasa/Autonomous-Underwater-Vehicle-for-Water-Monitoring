@@ -1,0 +1,168 @@
+{
+  "session_id": "20261009T183003Z_e22db023",
+  "result": {
+    "mission_id": "two_depth_hil_sampling_020m",
+    "phase": "COMPLETE",
+    "step_id": "depth_3",
+    "counts": {
+      "conductivity": 3,
+      "ph": 3,
+      "temperature": 3,
+      "dissolved_oxygen": 3
+    },
+    "payload_boot": 0,
+    "result": "All host steps finished",
+    "step_results": [
+      {
+        "step_id": "depth_1",
+        "sampling": true,
+        "complete": true,
+        "reason": "Per-sensor valid sample targets met",
+        "counts": {
+          "conductivity": 3,
+          "ph": 3,
+          "temperature": 3,
+          "dissolved_oxygen": 3
+        }
+      },
+      {
+        "step_id": "forward",
+        "sampling": false,
+        "complete": true,
+        "reason": "Motion completed",
+        "counts": {
+          "conductivity": 0,
+          "ph": 0,
+          "temperature": 0,
+          "dissolved_oxygen": 0
+        }
+      },
+      {
+        "step_id": "right",
+        "sampling": false,
+        "complete": true,
+        "reason": "Motion completed",
+        "counts": {
+          "conductivity": 0,
+          "ph": 0,
+          "temperature": 0,
+          "dissolved_oxygen": 0
+        }
+      },
+      {
+        "step_id": "heading_left",
+        "sampling": false,
+        "complete": true,
+        "reason": "Motion completed",
+        "counts": {
+          "conductivity": 0,
+          "ph": 0,
+          "temperature": 0,
+          "dissolved_oxygen": 0
+        }
+      },
+      {
+        "step_id": "depth_3",
+        "sampling": true,
+        "complete": true,
+        "reason": "Per-sensor valid sample targets met",
+        "counts": {
+          "conductivity": 3,
+          "ph": 3,
+          "temperature": 3,
+          "dissolved_oxygen": 3
+        }
+      }
+    ],
+    "all_sampling_points_complete": true
+  },
+  "messages": 15786,
+  "duration_s": 81.082225073,
+  "csv_rows": 76,
+  "qualified_samples": {
+    "depth_1/conductivity": 3,
+    "depth_1/ph": 3,
+    "depth_1/temperature": 3,
+    "depth_1/dissolved_oxygen": 3,
+    "depth_3/conductivity": 3,
+    "depth_3/ph": 3,
+    "depth_3/temperature": 3,
+    "depth_3/dissolved_oxygen": 3
+  },
+  "invalid_simple_states": 0,
+  "physical_output_enabled_messages": 0,
+  "diagnostics": {
+    "/tyrant/payload_sim/communication/diagnostics": {
+      "first": {
+        "connection_count": 1,
+        "disconnect_count": 0,
+        "reconnect_count": 0,
+        "publish_failures": 0,
+        "ping_failures": 1285
+      },
+      "last": {
+        "connection_count": 1,
+        "disconnect_count": 0,
+        "reconnect_count": 0,
+        "publish_failures": 0,
+        "ping_failures": 1285
+      }
+    },
+    "/tyrant/communication/diagnostics": {
+      "first": {
+        "connection_count": 1,
+        "disconnect_count": 0,
+        "reconnect_count": 0,
+        "publish_failures": 0
+      },
+      "last": {
+        "connection_count": 1,
+        "disconnect_count": 0,
+        "reconnect_count": 0,
+        "publish_failures": 0
+      }
+    }
+  },
+  "power_acks": [
+    {
+      "sensor_id": 1,
+      "accepted": true,
+      "enabled": true
+    },
+    {
+      "sensor_id": 2,
+      "accepted": true,
+      "enabled": true
+    },
+    {
+      "sensor_id": 3,
+      "accepted": true,
+      "enabled": true
+    },
+    {
+      "sensor_id": 4,
+      "accepted": true,
+      "enabled": true
+    },
+    {
+      "sensor_id": 1,
+      "accepted": true,
+      "enabled": false
+    },
+    {
+      "sensor_id": 2,
+      "accepted": true,
+      "enabled": false
+    },
+    {
+      "sensor_id": 3,
+      "accepted": true,
+      "enabled": false
+    },
+    {
+      "sensor_id": 4,
+      "accepted": true,
+      "enabled": false
+    }
+  ]
+}

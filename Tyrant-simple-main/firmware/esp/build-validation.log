@@ -1,0 +1,122 @@
+Processing esp32-s3-devkitm-1 (platform: espressif32@6.12.0; board: esp32-s3-devkitm-1; framework: arduino)
+--------------------------------------------------------------------------------
+Verbose mode can be enabled via `-v, --verbose` option
+CONFIGURATION: https://docs.platformio.org/page/boards/espressif32/esp32-s3-devkitm-1.html
+PLATFORM: Espressif 32 (6.12.0) > Espressif ESP32-S3-DevKitM-1
+HARDWARE: ESP32S3 240MHz, 320KB RAM, 8MB Flash
+DEBUG: Current (esp-builtin) On-board (esp-builtin) External (cmsis-dap, esp-bridge, esp-prog, iot-bus-jtag, jlink, minimodule, olimex-arm-usb-ocd, olimex-arm-usb-ocd-h, olimex-arm-usb-tiny-h, olimex-jtag-tiny, tumpa)
+PACKAGES: 
+ - framework-arduinoespressif32 @ 3.20017.241212+sha.dcc1105b 
+ - tool-esptoolpy @ 2.40900.250804 (4.9.0) 
+ - toolchain-riscv32-esp @ 8.4.0+2021r2-patch5 
+ - toolchain-xtensa-esp32s3 @ 8.4.0+2021r2-patch5
+LDF: Library Dependency Finder -> https://bit.ly/configure-pio-ldf
+LDF Modes: Finder ~ chain, Compatibility ~ soft
+Installing importlib-resources with pip at PlatformIO environment
+/home/charisto/tyrant-simple/firmware/esp/.pio-core/penv/bin/python -m pip install importlib-resources
+Requirement already satisfied: importlib-resources in /home/charisto/tyrant-simple/firmware/esp/.pio-core/penv/lib/python3.10/site-packages (7.1.0)
+Installing pyyaml with pip at PlatformIO environment
+/home/charisto/tyrant-simple/firmware/esp/.pio-core/penv/bin/python -m pip install pyyaml
+Requirement already satisfied: pyyaml in /home/charisto/tyrant-simple/firmware/esp/.pio-core/penv/lib/python3.10/site-packages (6.0.3)
+Installing markupsafe==2.0.1 with pip at PlatformIO environment
+/home/charisto/tyrant-simple/firmware/esp/.pio-core/penv/bin/python -m pip install markupsafe==2.0.1
+Requirement already satisfied: markupsafe==2.0.1 in /home/charisto/tyrant-simple/firmware/esp/.pio-core/penv/lib/python3.10/site-packages (2.0.1)
+Installing empy==3.3.4 with pip at PlatformIO environment
+/home/charisto/tyrant-simple/firmware/esp/.pio-core/penv/bin/python -m pip install empy==3.3.4
+Requirement already satisfied: empy==3.3.4 in /home/charisto/tyrant-simple/firmware/esp/.pio-core/penv/lib/python3.10/site-packages (3.3.4)
+Configuring esp32-s3-devkitm-1 with transport serial
+micro-ROS already built
+Found 34 compatible libraries
+Scanning dependencies...
+Dependency Graph
+|-- micro_ros_platformio @ 0.0.1+sha.cfee17f
+|-- Wire @ 2.0.0
+Building in release mode
+Compiling .pio/build/esp32-s3-devkitm-1/src/connection_health.cpp.o
+Compiling .pio/build/esp32-s3-devkitm-1/src/ea_dsra.cpp.o
+Compiling .pio/build/esp32-s3-devkitm-1/src/main.cpp.o
+Compiling .pio/build/esp32-s3-devkitm-1/src/payload_i2c.cpp.o
+Compiling .pio/build/esp32-s3-devkitm-1/src/payload_monitor.cpp.o
+Compiling .pio/build/esp32-s3-devkitm-1/src/payload_simulation.cpp.o
+Compiling .pio/build/esp32-s3-devkitm-1/src/power_controller.cpp.o
+Compiling .pio/build/esp32-s3-devkitm-1/src/water_quality_lib.cpp.o
+Building .pio/build/esp32-s3-devkitm-1/bootloader.bin
+Generating partitions .pio/build/esp32-s3-devkitm-1/partitions.bin
+esptool.py v4.9.0
+Creating esp32s3 image...
+Merged 1 ELF section
+Successfully created esp32s3 image.
+Compiling .pio/build/esp32-s3-devkitm-1/lib74b/micro_ros_platformio/platform_code/arduino/clock_gettime.cpp.o
+Compiling .pio/build/esp32-s3-devkitm-1/lib74b/micro_ros_platformio/platform_code/arduino/serial/micro_ros_transport.cpp.o
+Compiling .pio/build/esp32-s3-devkitm-1/libf27/Wire/Wire.cpp.o
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/Esp.cpp.o
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/FirmwareMSC.cpp.o
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/FunctionalInterrupt.cpp.o
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/HWCDC.cpp.o
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/HardwareSerial.cpp.o
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/IPAddress.cpp.o
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/IPv6Address.cpp.o
+Archiving .pio/build/esp32-s3-devkitm-1/lib74b/libmicro_ros_platformio.a
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/MD5Builder.cpp.o
+Indexing .pio/build/esp32-s3-devkitm-1/lib74b/libmicro_ros_platformio.a
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/Print.cpp.o
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/Stream.cpp.o
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/StreamString.cpp.o
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/Tone.cpp.o
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/USB.cpp.o
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/USBCDC.cpp.o
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/USBMSC.cpp.o
+Archiving .pio/build/esp32-s3-devkitm-1/libf27/libWire.a
+Indexing .pio/build/esp32-s3-devkitm-1/libf27/libWire.a
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/WMath.cpp.o
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/WString.cpp.o
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/base64.cpp.o
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/cbuf.cpp.o
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/esp32-hal-adc.c.o
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/esp32-hal-bt.c.o
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/esp32-hal-cpu.c.o
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/esp32-hal-dac.c.o
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/esp32-hal-gpio.c.o
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/esp32-hal-i2c-slave.c.o
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/esp32-hal-i2c.c.o
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/esp32-hal-ledc.c.o
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/esp32-hal-matrix.c.o
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/esp32-hal-misc.c.o
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/esp32-hal-psram.c.o
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/esp32-hal-rgb-led.c.o
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/esp32-hal-rmt.c.o
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/esp32-hal-sigmadelta.c.o
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/esp32-hal-spi.c.o
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/esp32-hal-time.c.o
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/esp32-hal-timer.c.o
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/esp32-hal-tinyusb.c.o
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/esp32-hal-touch.c.o
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/esp32-hal-uart.c.o
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/firmware_msc_fat.c.o
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/libb64/cdecode.c.o
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/libb64/cencode.c.o
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/main.cpp.o
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/stdlib_noniso.c.o
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/wiring_pulse.c.o
+Compiling .pio/build/esp32-s3-devkitm-1/FrameworkArduino/wiring_shift.c.o
+Archiving .pio/build/esp32-s3-devkitm-1/libFrameworkArduino.a
+Indexing .pio/build/esp32-s3-devkitm-1/libFrameworkArduino.a
+Linking .pio/build/esp32-s3-devkitm-1/firmware.elf
+Retrieving maximum program size .pio/build/esp32-s3-devkitm-1/firmware.elf
+Checking size .pio/build/esp32-s3-devkitm-1/firmware.elf
+Advanced Memory Usage is available via "PlatformIO Home > Project Inspect"
+RAM:   [=         ]  13.0% (used 42644 bytes from 327680 bytes)
+Flash: [=         ]  11.1% (used 372357 bytes from 3342336 bytes)
+Building .pio/build/esp32-s3-devkitm-1/firmware.bin with action:
+  "$PYTHONEXE" "$OBJCOPY" --chip esp32s3 elf2image --flash_mode ${__get_board_flash_mode(__env__)} --flash_freq ${__get_board_f_image(__env__)} --flash_size 8MB --elf-sha256-offset 0xb0 -o $TARGET $SOURCES
+Building .pio/build/esp32-s3-devkitm-1/firmware.bin
+esptool.py v4.9.0
+Creating esp32s3 image...
+Merged 2 ELF sections
+Successfully created esp32s3 image.
+========================= [SUCCESS] Took 4.90 seconds =========================
+
+Environment         Status    Duration
+------------------  --------  ------------
+esp32-s3-devkitm-1  SUCCESS   00:00:04.897
+========================= 1 succeeded in 00:00:04.897 =========================

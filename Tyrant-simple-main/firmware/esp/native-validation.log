@@ -1,0 +1,8 @@
+PASS transient transport errors tolerated; sustained loss and millis rollover trigger recovery
+PASS heartbeat timeout, reconnect invalidation, millis rollover
+PASS independent power channels; OFF accepted without heartbeat
+PASS EZO parsing, missing device, stale data, power-off invalidation, 64-bit time
+PASS EZO busy timeout, delayed conversion rejection and power-cycle invalidation
+PASS INA226 200A/75mV and R100 scaling, sign, stale, NACK, calibration and ID checks
+PASS independent I2C buses: failed thruster INA preserves sensor INA
+PASS adaptive sampling, critical DO override and invalid-input fallback

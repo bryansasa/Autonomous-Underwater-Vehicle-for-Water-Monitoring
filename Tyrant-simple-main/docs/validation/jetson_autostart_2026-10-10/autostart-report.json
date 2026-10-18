@@ -1,0 +1,71 @@
+{
+  "reboot_confirmed": true,
+  "ntp_synchronized_after_reboot": true,
+  "host_idle_after_reboot": true,
+  "both_heartbeats_healthy_after_reboot": true,
+  "host_pid_unchanged_during_esp_restart": true,
+  "host_pid_before": 32,
+  "host_pid_after": 32,
+  "interrupted_session": "20261009T185340Z_04638124",
+  "interrupted_result": {
+    "mission_id": "two_depth_hil_sampling_020m",
+    "phase": "STOPPED",
+    "step_id": "depth_1",
+    "counts": {
+      "conductivity": 0,
+      "ph": 0,
+      "temperature": 0,
+      "dissolved_oxygen": 0
+    },
+    "payload_boot": 0,
+    "result": "Operator requested stop",
+    "step_results": [],
+    "all_sampling_points_complete": null
+  },
+  "messages": 2782,
+  "duration_s": 14.130337634,
+  "power_acks": [
+    {
+      "sensor_id": 1,
+      "enabled": true,
+      "accepted": true
+    },
+    {
+      "sensor_id": 2,
+      "enabled": true,
+      "accepted": true
+    },
+    {
+      "sensor_id": 3,
+      "enabled": true,
+      "accepted": true
+    },
+    {
+      "sensor_id": 4,
+      "enabled": true,
+      "accepted": true
+    },
+    {
+      "sensor_id": 1,
+      "enabled": false,
+      "accepted": true
+    },
+    {
+      "sensor_id": 2,
+      "enabled": false,
+      "accepted": true
+    },
+    {
+      "sensor_id": 3,
+      "enabled": false,
+      "accepted": true
+    },
+    {
+      "sensor_id": 4,
+      "enabled": false,
+      "accepted": true
+    }
+  ],
+  "final_recorded_mode": 4,
+  "serial_aliases": "/dev/tyrant-esp\nID_SERIAL_SHORT=28:84:85:8B:BD:38\n/dev/tyrant-teensy\nID_SERIAL_SHORT=13843280\n"
+}

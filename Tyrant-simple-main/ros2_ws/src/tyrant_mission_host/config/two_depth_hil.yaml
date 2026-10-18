@@ -1,0 +1,18 @@
+# Development example, not tuning for a physical vehicle.
+mission_id: two_depth_hil
+sensor_policy: throughout  # throughout or at_point
+sampling:
+  target_samples: 3        # Per enabled sensor, new valid acquisitions only
+  timeout_s: 40.0
+  stable_s: 3.0
+  stable_span_m: 0.05
+  depth_fresh_s: 0.5
+  sample_max_age_s: 6.5
+sensors: [1, 2, 3, 4]
+steps:
+  - {id: depth_1, type: dive, target: 1.0, effort: 0.5, tolerance: 0.1, timeout_s: 90.0, sample: true}
+  - {id: forward, type: surge, effort: 0.3, duration_s: 10.0, timeout_s: 15.0}
+  - {id: right, type: sway, effort: 0.3, duration_s: 5.0, timeout_s: 10.0}
+  # Absolute heading in radians; this is not a relative left-turn command.
+  - {id: heading_left, type: heading, target: -1.5707963, effort: 0.4, tolerance: 0.0873, timeout_s: 90.0}
+  - {id: depth_3, type: dive, target: 3.0, effort: 0.5, tolerance: 0.1, timeout_s: 120.0, sample: true}

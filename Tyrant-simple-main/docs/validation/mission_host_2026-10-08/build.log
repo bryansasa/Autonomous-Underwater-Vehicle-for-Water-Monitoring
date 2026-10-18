@@ -1,0 +1,8 @@
+Starting >>> tyrant_payload_interfaces
+[Processing: tyrant_payload_interfaces]
+Finished <<< tyrant_payload_interfaces [30.0s]
+Starting >>> tyrant_mission_host
+[Processing: tyrant_mission_host]
+Finished <<< tyrant_mission_host [30.3s]
+
+Summary: 2 packages finished [1min 0s]

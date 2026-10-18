@@ -1,0 +1,160 @@
+{
+  "session_id": "20261009T174528Z_6b544ded",
+  "started_utc": "2026-10-09T17:45:28.891341+00:00",
+  "duration_s": 46.685070315,
+  "messages": 9098,
+  "result": {
+    "mission_id": "two_depth_hil_sampling_020m",
+    "phase": "FAILED",
+    "step_id": "right",
+    "counts": {
+      "conductivity": 0,
+      "ph": 0,
+      "temperature": 0,
+      "dissolved_oxygen": 0
+    },
+    "payload_boot": 0,
+    "result": "Teensy state invalid",
+    "step_results": [
+      {
+        "step_id": "depth_1",
+        "sampling": true,
+        "complete": true,
+        "reason": "Per-sensor valid sample targets met",
+        "counts": {
+          "conductivity": 3,
+          "ph": 6,
+          "temperature": 6,
+          "dissolved_oxygen": 6
+        }
+      },
+      {
+        "step_id": "forward",
+        "sampling": false,
+        "complete": true,
+        "reason": "Motion completed",
+        "counts": {
+          "conductivity": 0,
+          "ph": 0,
+          "temperature": 0,
+          "dissolved_oxygen": 0
+        }
+      },
+      {
+        "step_id": "right",
+        "sampling": false,
+        "complete": false,
+        "reason": "Teensy state invalid",
+        "counts": {
+          "conductivity": 0,
+          "ph": 0,
+          "temperature": 0,
+          "dissolved_oxygen": 0
+        }
+      }
+    ],
+    "all_sampling_points_complete": null
+  },
+  "events": [
+    {
+      "event": "step_started",
+      "monotonic_s": 6294.129630777,
+      "step_id": "depth_1"
+    },
+    {
+      "event": "sampling_started",
+      "monotonic_s": 6307.454692167,
+      "step_id": "depth_1"
+    },
+    {
+      "event": "step_result",
+      "monotonic_s": 6327.697956019,
+      "step_id": "depth_1",
+      "complete": true,
+      "reason": "Per-sensor valid sample targets met",
+      "counts": {
+        "conductivity": 3,
+        "ph": 6,
+        "temperature": 6,
+        "dissolved_oxygen": 6
+      }
+    },
+    {
+      "event": "step_started",
+      "monotonic_s": 6327.709413567,
+      "step_id": "forward"
+    },
+    {
+      "event": "step_result",
+      "monotonic_s": 6337.805799851,
+      "step_id": "forward",
+      "complete": true,
+      "reason": "Motion completed",
+      "counts": {
+        "conductivity": 0,
+        "ph": 0,
+        "temperature": 0,
+        "dissolved_oxygen": 0
+      }
+    },
+    {
+      "event": "step_started",
+      "monotonic_s": 6337.815770933,
+      "step_id": "right"
+    },
+    {
+      "event": "step_result",
+      "monotonic_s": 6338.807160971,
+      "step_id": "right",
+      "complete": false,
+      "reason": "Teensy state invalid",
+      "counts": {
+        "conductivity": 0,
+        "ph": 0,
+        "temperature": 0,
+        "dissolved_oxygen": 0
+      }
+    },
+    {
+      "event": "mission_result",
+      "monotonic_s": 6338.807160971,
+      "step_id": "right",
+      "state": "FAILED",
+      "reason": "Teensy state invalid"
+    }
+  ],
+  "first_invalid_s": 44.685026512,
+  "first_notready_s": 44.688832505,
+  "host_failed_s": 44.734814129,
+  "host_failure_after_invalid_s": 0.049787617,
+  "stop_after_invalid_s": 0.005001395,
+  "safe_after_invalid_s": 0.005788063,
+  "disabled_after_invalid_s": 0.004537928,
+  "nonzero_or_enabled_after_invalid_200ms": 0,
+  "messages_after_invalid_200ms": 87,
+  "qualified_samples_by_step": {
+    "depth_1:ph": 6,
+    "depth_1:temperature": 6,
+    "depth_1:dissolved_oxygen": 6,
+    "depth_1:conductivity": 3
+  },
+  "qualified_after_invalid": 0,
+  "esp_diag_first": {
+    "time_s": 0.28713673,
+    "connection_count": 4,
+    "disconnect_count": 3,
+    "ping_failures": 5439,
+    "publish_failures": 51,
+    "host_heartbeat_healthy": true
+  },
+  "esp_diag_last": {
+    "time_s": 46.284472857,
+    "connection_count": 4,
+    "disconnect_count": 3,
+    "ping_failures": 5439,
+    "publish_failures": 51,
+    "host_heartbeat_healthy": true
+  },
+  "esp_heartbeat_false_messages": 0,
+  "water_quality_messages": 20
+}

@@ -1,0 +1,229 @@
+{
+  "session_id": "20261009T174759Z_9f333d9e",
+  "started_utc": "2026-10-09T17:47:59.305167+00:00",
+  "duration_s": 65.267808267,
+  "messages": 12728,
+  "result": {
+    "mission_id": "two_depth_hil_sampling_020m",
+    "phase": "COMPLETE",
+    "step_id": "depth_3",
+    "counts": {
+      "conductivity": 3,
+      "ph": 3,
+      "temperature": 3,
+      "dissolved_oxygen": 3
+    },
+    "payload_boot": 0,
+    "result": "All host steps finished",
+    "step_results": [
+      {
+        "step_id": "depth_1",
+        "sampling": true,
+        "complete": true,
+        "reason": "Per-sensor valid sample targets met",
+        "counts": {
+          "conductivity": 3,
+          "ph": 3,
+          "temperature": 3,
+          "dissolved_oxygen": 3
+        }
+      },
+      {
+        "step_id": "forward",
+        "sampling": false,
+        "complete": true,
+        "reason": "Motion completed",
+        "counts": {
+          "conductivity": 0,
+          "ph": 0,
+          "temperature": 0,
+          "dissolved_oxygen": 0
+        }
+      },
+      {
+        "step_id": "right",
+        "sampling": false,
+        "complete": true,
+        "reason": "Motion completed",
+        "counts": {
+          "conductivity": 0,
+          "ph": 0,
+          "temperature": 0,
+          "dissolved_oxygen": 0
+        }
+      },
+      {
+        "step_id": "heading_left",
+        "sampling": false,
+        "complete": true,
+        "reason": "Motion completed",
+        "counts": {
+          "conductivity": 0,
+          "ph": 0,
+          "temperature": 0,
+          "dissolved_oxygen": 0
+        }
+      },
+      {
+        "step_id": "depth_3",
+        "sampling": true,
+        "complete": true,
+        "reason": "Per-sensor valid sample targets met",
+        "counts": {
+          "conductivity": 3,
+          "ph": 3,
+          "temperature": 3,
+          "dissolved_oxygen": 3
+        }
+      }
+    ],
+    "all_sampling_points_complete": true
+  },
+  "events": [
+    {
+      "event": "step_started",
+      "monotonic_s": 6444.535197558,
+      "step_id": "depth_1"
+    },
+    {
+      "event": "sampling_started",
+      "monotonic_s": 6457.854229291,
+      "step_id": "depth_1"
+    },
+    {
+      "event": "step_result",
+      "monotonic_s": 6460.792951738,
+      "step_id": "depth_1",
+      "complete": true,
+      "reason": "Per-sensor valid sample targets met",
+      "counts": {
+        "conductivity": 3,
+        "ph": 3,
+        "temperature": 3,
+        "dissolved_oxygen": 3
+      }
+    },
+    {
+      "event": "step_started",
+      "monotonic_s": 6460.800106981,
+      "step_id": "forward"
+    },
+    {
+      "event": "step_result",
+      "monotonic_s": 6470.971811552,
+      "step_id": "forward",
+      "complete": true,
+      "reason": "Motion completed",
+      "counts": {
+        "conductivity": 0,
+        "ph": 0,
+        "temperature": 0,
+        "dissolved_oxygen": 0
+      }
+    },
+    {
+      "event": "step_started",
+      "monotonic_s": 6470.982194366,
+      "step_id": "right"
+    },
+    {
+      "event": "step_result",
+      "monotonic_s": 6476.1837764,
+      "step_id": "right",
+      "complete": true,
+      "reason": "Motion completed",
+      "counts": {
+        "conductivity": 0,
+        "ph": 0,
+        "temperature": 0,
+        "dissolved_oxygen": 0
+      }
+    },
+    {
+      "event": "step_started",
+      "monotonic_s": 6476.194891898,
+      "step_id": "heading_left"
+    },
+    {
+      "event": "step_result",
+      "monotonic_s": 6481.996912094,
+      "step_id": "heading_left",
+      "complete": true,
+      "reason": "Motion completed",
+      "counts": {
+        "conductivity": 0,
+        "ph": 0,
+        "temperature": 0,
+        "dissolved_oxygen": 0
+      }
+    },
+    {
+      "event": "step_started",
+      "monotonic_s": 6482.010017185,
+      "step_id": "depth_3"
+    },
+    {
+      "event": "sampling_started",
+      "monotonic_s": 6502.954760616,
+      "step_id": "depth_3"
+    },
+    {
+      "event": "step_result",
+      "monotonic_s": 6507.796925107,
+      "step_id": "depth_3",
+      "complete": true,
+      "reason": "Per-sensor valid sample targets met",
+      "counts": {
+        "conductivity": 3,
+        "ph": 3,
+        "temperature": 3,
+        "dissolved_oxygen": 3
+      }
+    },
+    {
+      "event": "mission_result",
+      "monotonic_s": 6507.799299268,
+      "step_id": "depth_3",
+      "state": "COMPLETE",
+      "reason": "All host steps finished"
+    }
+  ],
+  "first_invalid_s": null,
+  "first_notready_s": null,
+  "host_failed_s": null,
+  "host_failure_after_invalid_s": null,
+  "stop_after_invalid_s": null,
+  "safe_after_invalid_s": null,
+  "disabled_after_invalid_s": null,
+  "nonzero_or_enabled_after_invalid_200ms": 0,
+  "messages_after_invalid_200ms": 0,
+  "qualified_samples_by_step": {
+    "depth_1:conductivity": 3,
+    "depth_1:ph": 3,
+    "depth_1:temperature": 3,
+    "depth_1:dissolved_oxygen": 3,
+    "depth_3:conductivity": 3,
+    "depth_3:ph": 3,
+    "depth_3:temperature": 3,
+    "depth_3:dissolved_oxygen": 3
+  },
+  "qualified_after_invalid": null,
+  "esp_diag_first": {
+    "time_s": 0.870027079,
+    "connection_count": 4,
+    "disconnect_count": 3,
+    "ping_failures": 5439,
+    "publish_failures": 51,
+    "host_heartbeat_healthy": true
+  },
+  "esp_diag_last": {
+    "time_s": 64.867699686,
+    "connection_count": 4,
+    "disconnect_count": 3,
+    "ping_failures": 5439,
+    "publish_failures": 51,
+    "host_heartbeat_healthy": true
+  },
+  "esp_heartbeat_false_messages": 0,
+  "water_quality_messages": 30
+}

@@ -1,0 +1,14 @@
+connection_state: 2
+agent_connected: true
+host_heartbeat_healthy: true
+host_heartbeat_age_ms: 95
+connection_count: 7
+disconnect_count: 6
+reconnect_count: 6
+host_heartbeat_timeout_count: 6
+ping_failures: 3308
+publish_failures: 86
+executor_failures: 0
+entity_create_failures: 0
+entity_destroy_failures: 0
+---

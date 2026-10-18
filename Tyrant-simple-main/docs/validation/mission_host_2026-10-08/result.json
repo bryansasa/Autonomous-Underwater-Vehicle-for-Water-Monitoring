@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-08",
+  "host_build": "PASS",
+  "python_tests": 28,
+  "ros_fake_endpoint_smoke": "PASS",
+  "firmware_hardware_build": "PASS",
+  "firmware_simulation_build": "PASS",
+  "firmware_native_groups": {
+    "hardware": 8,
+    "simulation": 5
+  },
+  "canonical_esp_interface": "ros2_ws/src/tyrant_payload_interfaces",
+  "firmware_location": "firmware/esp",
+  "teensy_firmware_modified": false,
+  "actual_dual_board_hil_test_performed": false,
+  "jetson_deployed": false,
+  "limitations": [
+    "WAIT keeps existing controller reference; target hold/stability still needs board HIL verification",
+    "Device clocks remain independent; association uses host receive time and sample age",
+    "ESP reboot inferred from uptime/sequence, not a persistent boot identifier",
+    "GUI and LMPC not implemented"
+  ],
+  "source_sha256": {
+    "ros2_ws/src/tyrant_mission_host/config/two_depth_hil.yaml": "ebce169d87e394ebde588ffad29b664320e62600a47ecd7fb1a50b1fd09111b5",
+    "ros2_ws/src/tyrant_mission_host/launch/mission_host.launch.py": "7d2b2a7f8bc49b24e4d761ca247a89febe7e82e00ac8c8358b6350fc80982de6",
+    "ros2_ws/src/tyrant_mission_host/package.xml": "47dd362861b9a666af28e728b0df997ae64722add9075c631f7fda56ec0730c2",
+    "ros2_ws/src/tyrant_mission_host/resource/tyrant_mission_host": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ros2_ws/src/tyrant_mission_host/setup.cfg": "ed8327d4db9d77ba321515b962cbab7af40d2286143eacebbade5e9584cf2f89",
+    "ros2_ws/src/tyrant_mission_host/setup.py": "3bad97fd3eb228e72de5e8d261236c49247b7f75d1e392d3bbb6761d066b7d7f",
+    "ros2_ws/src/tyrant_mission_host/test/ros_smoke.py": "1feea2fe2d5ac55355fa37e11698fa3d2dee7b3ce8cbaba7cfd13a229b1e7c86",
+    "ros2_ws/src/tyrant_mission_host/test/test_core.py": "05f22dc4d4f3e5522c1d6fd2113ac9e8c6c5c57071286274e51916173b941cad",
+    "ros2_ws/src/tyrant_mission_host/tyrant_mission_host/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ros2_ws/src/tyrant_mission_host/tyrant_mission_host/core.py": "c8074222e016496be9b9b6eb2908beb77bc169efea215c72ca69488015b680e2",
+    "ros2_ws/src/tyrant_mission_host/tyrant_mission_host/node.py": "d0343aa138b868e7c30fa8aa4ebcd463b72f3d3a3db7630b2499db58664cd164",
+    "ros2_ws/src/tyrant_mission_host/tyrant_mission_host/recording.py": "bc64e8a7f64042f7fa40f1b5710fcff5136286419db74cdf5868b73bec31f63f",
+    "ros2_ws/src/tyrant_payload_interfaces/CMakeLists.txt": "0e3fcb081d623fc4180d10ddaa96bb3ffcd7c20c0b32a10c67dc6a6fe3ec1800",
+    "ros2_ws/src/tyrant_payload_interfaces/msg/PayloadCommunicationDiagnostics.msg": "464f8ea8ace68ecee75d5c640f7abdaf4e8bdcd29464010c8ac1881b78a5e04d",
+    "ros2_ws/src/tyrant_payload_interfaces/msg/PayloadHealth.msg": "5d9ecd8b13e2f4115919e240604cae8019b7f663f10f5f3f7a3e85103fe3977b",
+    "ros2_ws/src/tyrant_payload_interfaces/msg/PayloadPower.msg": "fee12f305a4661b435092b658c7a856edd8f22f9dc494390a1d61a2d435886f3",
+    "ros2_ws/src/tyrant_payload_interfaces/msg/PayloadWaterQuality.msg": "3d1337d7d97a13b08edd13b10cf4a24918b0a23b3f6d86293d1994b32882f4dc",
+    "ros2_ws/src/tyrant_payload_interfaces/msg/SensorPowerRequest.msg": "0a293cd255f2e343a4dc08a7b37ccbae2d0405c60163940bd73b7d87c21039a6",
+    "ros2_ws/src/tyrant_payload_interfaces/msg/SensorPowerStatus.msg": "c75a4329c0478560258e315c49d1b4a369870f6ee7ee100d2b2bfdb3dc4a5085",
+    "ros2_ws/src/tyrant_payload_interfaces/package.xml": "00a022f361c2441f7b6f8d17967937bbbb10505ba4ee328bdc1563b14edefcf0"
+  }
+}

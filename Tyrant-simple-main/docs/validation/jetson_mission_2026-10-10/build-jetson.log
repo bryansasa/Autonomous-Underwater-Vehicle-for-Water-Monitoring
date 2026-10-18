@@ -1,0 +1,12 @@
+Starting >>> tyrant_interfaces
+Finished <<< tyrant_interfaces [6min 17s]
+Starting >>> tyrant_payload_interfaces
+Finished <<< tyrant_payload_interfaces [2min 16s]
+Starting >>> tyrant_mission_host
+Finished <<< tyrant_mission_host [7.15s]
+Starting >>> tyrant_sim
+Finished <<< tyrant_sim [6.88s]
+Starting >>> tyrant_teleop
+Finished <<< tyrant_teleop [6.88s]
+
+Summary: 5 packages finished [8min 56s]

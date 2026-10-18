@@ -1,0 +1,56 @@
+tyrant_teleop:
+  ros__parameters:
+    # Development defaults only. Run tyrant_joy_probe and adjust indices
+    # for the exact controller/driver used on the laptop or Jetson.
+    publish_rate_hz: 20.0
+    heartbeat_rate_hz: 10.0
+    publish_heartbeat: true
+
+    joy_timeout_s: 0.20
+    safe_timeout_s: 1.00
+    safe_on_joy_timeout: true
+    deadzone: 0.08
+
+    # Common Linux/SDL-style DualShock/DualSense mapping example.
+    axes.surge.index: 1
+    axes.surge.invert: true
+    axes.surge.scale: 1.0
+
+    axes.sway.index: 0
+    axes.sway.invert: false
+    axes.sway.scale: 1.0
+
+    # A direct heave axis can be used by setting index >= 0.
+    # When both trigger indices below are valid, trigger-pair heave wins.
+    axes.heave.index: -1
+    axes.heave.invert: false
+    axes.heave.scale: 1.0
+
+    # Roll/pitch are auto-level by default.
+    axes.roll.index: -1
+    axes.roll.invert: false
+    axes.roll.scale: 1.0
+
+    axes.pitch.index: -1
+    axes.pitch.invert: false
+    axes.pitch.scale: 1.0
+
+    axes.yaw.index: 3
+    axes.yaw.invert: false
+    axes.yaw.scale: 1.0
+
+    # R2 = positive-down heave, L2 = negative/up heave by default.
+    # Many Linux drivers report triggers at +1 released and -1 pressed.
+    heave_triggers.positive_index: 5
+    heave_triggers.negative_index: 2
+    heave_triggers.rest_value: 1.0
+    heave_triggers.pressed_value: -1.0
+    heave_triggers.scale: 1.0
+
+    # PRD button mapping, shared with the node defaults. Verify the actual
+    # controller with tyrant_joy_probe and keep each action on a distinct button.
+    buttons.deadman: 4       # L1: hold to command
+    buttons.manual_mode: 0   # CROSS: request MANUAL
+    buttons.idle_mode: 2     # SQUARE: request IDLE
+    buttons.safe_mode: 1     # CIRCLE: request SAFE
+    buttons.set_surface: 3   # TRIANGLE: set depth surface reference

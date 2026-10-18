@@ -1,0 +1,229 @@
+{
+  "session_id": "20261009T051049Z_79051c04",
+  "source": "/home/charisto/tyrant-simple/ros2_ws/bags/missions/20261009T051049Z_79051c04",
+  "start_wib": "2026-10-09T12:10:49.312171+07:00",
+  "duration_s": 134.201906766,
+  "message_count": 26042,
+  "topic_counts": {
+    "/tyrant/simple_state": 670,
+    "/tyrant/system/health": 670,
+    "/tyrant/mode/status": 1353,
+    "/tyrant/mission/status": 693,
+    "/tyrant/sensors/imu": 670,
+    "/tyrant/sensors/pressure": 670,
+    "/tyrant/actuation/status": 670,
+    "/tyrant/emergency/status": 670,
+    "/tyrant/mode/request": 16,
+    "/tyrant/mission/command": 23,
+    "/tyrant/payload_sim/sensor_power/request": 8,
+    "/tyrant/host_heartbeat": 1343,
+    "/tyrant/payload_sim/host_heartbeat": 1343,
+    "/tyrant/host/mission/status": 1343,
+    "/tyrant/payload_sim/sensor_power/status": 8,
+    "/tyrant/control/wrench_request": 6581,
+    "/tyrant/control/thruster_command": 6581,
+    "/tyrant/payload_sim/power/thruster": 1341,
+    "/tyrant/payload_sim/power/sensors": 671,
+    "/tyrant/communication/diagnostics": 135,
+    "/tyrant/payload_sim/heartbeat": 135,
+    "/tyrant/payload_sim/communication/diagnostics": 135,
+    "/tyrant/payload_sim/health": 268,
+    "/tyrant/payload_sim/water_quality": 45
+  },
+  "valid_sensor_values": {
+    "conductivity": {
+      "count": 40,
+      "min": 901.3477783203125,
+      "max": 1496.3023681640625
+    },
+    "ph": {
+      "count": 43,
+      "min": 6.403594017028809,
+      "max": 7.990139484405518
+    },
+    "temperature": {
+      "count": 43,
+      "min": 24.506738662719727,
+      "max": 27.48151206970215
+    },
+    "dissolved_oxygen": {
+      "count": 42,
+      "min": 1.5,
+      "max": 8.487674713134766
+    }
+  },
+  "esp_diagnostics_first": {
+    "connection_count": 4,
+    "disconnect_count": 3,
+    "ping_failures": 882,
+    "publish_failures": 53,
+    "host_heartbeat_healthy": true
+  },
+  "esp_diagnostics_last": {
+    "connection_count": 4,
+    "disconnect_count": 3,
+    "ping_failures": 882,
+    "publish_failures": 53,
+    "host_heartbeat_healthy": true
+  },
+  "points": [
+    {
+      "step_id": "depth_1",
+      "phases": {
+        "TRAVEL": 5,
+        "STABILIZING": 20
+      },
+      "last_stabilizing_depth_m": 0.8660878539085388,
+      "valid_ph_snapshots_in_stabilization": 20,
+      "qualified_rows_all_channels": 0
+    },
+    {
+      "step_id": "depth_3",
+      "phases": {
+        "TRAVEL": 4,
+        "STABILIZING": 12,
+        "COMPLETE": 1
+      },
+      "last_stabilizing_depth_m": 3.1325948238372803,
+      "valid_ph_snapshots_in_stabilization": 12,
+      "qualified_rows_all_channels": 0
+    }
+  ],
+  "mission_result": {
+    "mission_id": "two_depth_hil",
+    "phase": "COMPLETE",
+    "step_id": "depth_3",
+    "counts": {
+      "conductivity": 0,
+      "ph": 0,
+      "temperature": 0,
+      "dissolved_oxygen": 0
+    },
+    "payload_boot": 0,
+    "result": "All host steps finished",
+    "step_results": [
+      {
+        "step_id": "depth_1",
+        "sampling": true,
+        "complete": false,
+        "reason": "Sampling/stabilization timeout",
+        "counts": {
+          "conductivity": 0,
+          "ph": 0,
+          "temperature": 0,
+          "dissolved_oxygen": 0
+        }
+      },
+      {
+        "step_id": "forward",
+        "sampling": false,
+        "complete": true,
+        "reason": "Motion completed",
+        "counts": {
+          "conductivity": 0,
+          "ph": 0,
+          "temperature": 0,
+          "dissolved_oxygen": 0
+        }
+      },
+      {
+        "step_id": "right",
+        "sampling": false,
+        "complete": true,
+        "reason": "Motion completed",
+        "counts": {
+          "conductivity": 0,
+          "ph": 0,
+          "temperature": 0,
+          "dissolved_oxygen": 0
+        }
+      },
+      {
+        "step_id": "heading_left",
+        "sampling": false,
+        "complete": true,
+        "reason": "Motion completed",
+        "counts": {
+          "conductivity": 0,
+          "ph": 0,
+          "temperature": 0,
+          "dissolved_oxygen": 0
+        }
+      },
+      {
+        "step_id": "depth_3",
+        "sampling": true,
+        "complete": false,
+        "reason": "Sampling/stabilization timeout",
+        "counts": {
+          "conductivity": 0,
+          "ph": 0,
+          "temperature": 0,
+          "dissolved_oxygen": 0
+        }
+      }
+    ],
+    "all_sampling_points_complete": false
+  },
+  "config": {
+    "mission_id": "two_depth_hil",
+    "sensor_policy": "throughout",
+    "sampling": {
+      "target_samples": 3,
+      "timeout_s": 40.0,
+      "stable_s": 3.0,
+      "stable_span_m": 0.05,
+      "depth_fresh_s": 0.5,
+      "sample_max_age_s": 6.5
+    },
+    "sensors": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "steps": [
+      {
+        "id": "depth_1",
+        "type": "dive",
+        "target": 1.0,
+        "effort": 0.5,
+        "tolerance": 0.1,
+        "timeout_s": 90.0,
+        "sample": true
+      },
+      {
+        "id": "forward",
+        "type": "surge",
+        "effort": 0.3,
+        "duration_s": 10.0,
+        "timeout_s": 15.0
+      },
+      {
+        "id": "right",
+        "type": "sway",
+        "effort": 0.3,
+        "duration_s": 5.0,
+        "timeout_s": 10.0
+      },
+      {
+        "id": "heading_left",
+        "type": "heading",
+        "target": -1.5707963,
+        "effort": 0.4,
+        "tolerance": 0.0873,
+        "timeout_s": 90.0
+      },
+      {
+        "id": "depth_3",
+        "type": "dive",
+        "target": 3.0,
+        "effort": 0.5,
+        "tolerance": 0.1,
+        "timeout_s": 120.0,
+        "sample": true
+      }
+    ]
+  },
+  "analysis": "Offline decoding of existing ROS bag; no replay or board command"
+}

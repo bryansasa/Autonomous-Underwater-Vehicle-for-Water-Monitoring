@@ -1,0 +1,9 @@
+test_agent_failure_stops_recorder (test_run_companion.LifecycleTests) ... ok
+test_disconnect_stops_both_children (test_run_companion.LifecycleTests) ... ok
+test_low_disk_prevents_start (test_run_companion.LifecycleTests) ... ok
+test_shutdown_signals_both_children (test_run_companion.LifecycleTests) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 3.245s
+
+OK

@@ -1,0 +1,13 @@
+● systemd-timesyncd.service - Network Time Synchronization
+   Loaded: loaded (/lib/systemd/system/systemd-timesyncd.service; enabled; vendor preset: enabled)
+   Active: active (running) since Sat 2026-10-10 01:56:13 WIB; 1min 51s ago
+     Docs: man:systemd-timesyncd.service(8)
+ Main PID: 3462 (systemd-timesyn)
+   Status: "Synchronized to time server 162.159.200.123:123 (time.cloudflare.com)."
+    Tasks: 2 (limit: 4181)
+   CGroup: /system.slice/systemd-timesyncd.service
+           └─3462 /lib/systemd/systemd-timesyncd
+
+Oct 10 01:56:13 nvidia-desktop systemd[1]: Starting Network Time Synchronization...
+Oct 10 01:56:13 nvidia-desktop systemd[1]: Started Network Time Synchronization.
+Oct 10 01:56:43 nvidia-desktop systemd-timesyncd[3462]: Synchronized to time server 162.159.200.123:123 (time.cloudflare.com).

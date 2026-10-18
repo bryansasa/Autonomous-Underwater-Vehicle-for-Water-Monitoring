@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-10",
+  "change": "Immediate host abort on invalid/stale state or estimator not ready",
+  "test_count": 37,
+  "tests": "PASS",
+  "build": "PASS",
+  "ros_fake_endpoint_smoke": "PASS",
+  "invalid_abort_s_observed": 0.037,
+  "stale_abort_s_observed": 0.523,
+  "firmware_changed": false,
+  "physical_board_retest_performed": false,
+  "source_sha256": {
+    "ros2_ws/src/tyrant_mission_host/tyrant_mission_host/core.py": "15994d5ff03a586ce313632f789e92e3607b683647883714e02ca33e275d261c",
+    "ros2_ws/src/tyrant_mission_host/test/test_core.py": "03d186db2f8fc07ce1ee5688066324cade18ad7d470dbef4bb162ff1422062b5",
+    "ros2_ws/src/tyrant_mission_host/test/ros_smoke.py": "a706ce1fece180a6136d5b6b66e9ee56fcde3dab136c8efc0b5072c475976e68"
+  }
+}

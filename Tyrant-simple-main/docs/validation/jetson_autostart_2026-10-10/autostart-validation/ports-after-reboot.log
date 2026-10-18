@@ -1,0 +1,2 @@
+lrwxrwxrwx 1 root root 7 Oct 10 01:56 /dev/tyrant-esp -> ttyACM0
+lrwxrwxrwx 1 root root 7 Oct 10 01:56 /dev/tyrant-teensy -> ttyACM1

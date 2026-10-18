@@ -1,0 +1,46 @@
+[INFO] [launch]: All log files can be found below /root/.ros/log/2026-10-09-18-28-48-428590-nvidia-desktop-2559
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [tyrant_plant_sim-1]: process started with pid [2620]
+[tyrant_plant_sim-1] [INFO] [1791570531.740032890] [tyrant_plant_sim]: Synthetic reduced plant HIL active. This is not a validated vehicle model.
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[INFO] [tyrant_plant_sim-1]: sending signal 'SIGINT' to process[tyrant_plant_sim-1]
+[tyrant_plant_sim-1] Traceback (most recent call last):
+[tyrant_plant_sim-1]   File "/mission_ws/build/tyrant_sim/tyrant_sim/plant_node.py", line 123, in main
+[tyrant_plant_sim-1]     rclpy.spin(node)
+[tyrant_plant_sim-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 229, in spin
+[tyrant_plant_sim-1]     executor.spin_once()
+[tyrant_plant_sim-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 812, in spin_once
+[tyrant_plant_sim-1]     self._spin_once_impl(timeout_sec)
+[tyrant_plant_sim-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 807, in _spin_once_impl
+[tyrant_plant_sim-1]     handler()
+[tyrant_plant_sim-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/task.py", line 293, in __call__
+[tyrant_plant_sim-1]     self._execute_coroutine_step(self._handler)
+[tyrant_plant_sim-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/task.py", line 309, in _execute_coroutine_step
+[tyrant_plant_sim-1]     result = coro.send(None)
+[tyrant_plant_sim-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 488, in handler
+[tyrant_plant_sim-1]     await call_coroutine(entity, arg)
+[tyrant_plant_sim-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 396, in _execute_timer
+[tyrant_plant_sim-1]     await await_or_execute(tmr.callback)
+[tyrant_plant_sim-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 110, in await_or_execute
+[tyrant_plant_sim-1]     return callback(*args)
+[tyrant_plant_sim-1]   File "/mission_ws/build/tyrant_sim/tyrant_sim/plant_node.py", line 116, in _update
+[tyrant_plant_sim-1]     self.state_pub.publish(msg)
+[tyrant_plant_sim-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/publisher.py", line 70, in publish
+[tyrant_plant_sim-1]     self.__publisher.publish(msg)
+[tyrant_plant_sim-1] KeyboardInterrupt
+[tyrant_plant_sim-1] 
+[tyrant_plant_sim-1] During handling of the above exception, another exception occurred:
+[tyrant_plant_sim-1] 
+[tyrant_plant_sim-1] Traceback (most recent call last):
+[tyrant_plant_sim-1]   File "/mission_ws/install/tyrant_sim/lib/tyrant_sim/tyrant_plant_sim", line 33, in <module>
+[tyrant_plant_sim-1]     sys.exit(load_entry_point('tyrant-sim', 'console_scripts', 'tyrant_plant_sim')())
+[tyrant_plant_sim-1]   File "/mission_ws/build/tyrant_sim/tyrant_sim/plant_node.py", line 126, in main
+[tyrant_plant_sim-1]     rclpy.shutdown()
+[tyrant_plant_sim-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 130, in shutdown
+[tyrant_plant_sim-1]     _shutdown(context=context)
+[tyrant_plant_sim-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/utilities.py", line 58, in shutdown
+[tyrant_plant_sim-1]     return context.shutdown()
+[tyrant_plant_sim-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/context.py", line 102, in shutdown
+[tyrant_plant_sim-1]     self.__context.shutdown()
+[tyrant_plant_sim-1] rclpy._rclpy_pybind11.RCLError: failed to shutdown: rcl_shutdown already called on the given context, at ./src/rcl/init.c:241
+[ERROR] [tyrant_plant_sim-1]: process has died [pid 2620, exit code 1, cmd '/mission_ws/install/tyrant_sim/lib/tyrant_sim/tyrant_plant_sim --ros-args -r __node:=tyrant_plant_sim --params-file /mission_ws/install/tyrant_sim/share/tyrant_sim/config/reduced_plant.yaml'].

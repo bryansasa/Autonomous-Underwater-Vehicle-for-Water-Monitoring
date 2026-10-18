@@ -1,0 +1,5 @@
+  PID COMMAND         COMMAND
+    1 docker-init     /sbin/docker-init -- /bin/bash -c exec sleep infinity
+    8 sleep           sleep infinity
+  268 python3         /usr/bin/python3 -c from ros2cli.daemon.daemonize import main; main() --name ros2-daemon --ros-domain-id 0 --rmw-implementation rmw_fastrtps_cpp
+ 3219 ps              ps -eo pid,comm,args

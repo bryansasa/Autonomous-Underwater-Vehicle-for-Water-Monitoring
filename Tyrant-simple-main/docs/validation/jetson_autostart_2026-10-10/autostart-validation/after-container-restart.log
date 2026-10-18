@@ -1,0 +1,42 @@
+WARNING: topic [/tyrant/host/mission/status] does not appear to be published yet
+Could not determine the type for the passed topic
+communication_healthy: true
+estimator_ready: true
+autonomy_ready: true
+propulsion_allowed: false
+current_mode: 4
+host_heartbeat_age_ms: 17
+---
+
+Files:             bag_0.db3
+Bag size:          273.3 KiB
+Storage id:        sqlite3
+Duration:          14.130337634s
+Start:             Oct  9 2026 18:53:40.852686016 (1791572020.852686016)
+End:               Oct  9 2026 18:53:54.983023650 (1791572034.983023650)
+Messages:          2782
+Topic information: Topic: /tyrant/payload_sim/host_heartbeat | Type: std_msgs/msg/UInt32 | Count: 142 | Serialization Format: cdr
+                   Topic: /tyrant/host_heartbeat | Type: std_msgs/msg/UInt32 | Count: 142 | Serialization Format: cdr
+                   Topic: /tyrant/payload_sim/sensor_power/request | Type: tyrant_payload_interfaces/msg/SensorPowerRequest | Count: 8 | Serialization Format: cdr
+                   Topic: /tyrant/mode/request | Type: tyrant_interfaces/msg/ModeRequest | Count: 4 | Serialization Format: cdr
+                   Topic: /tyrant/payload_sim/heartbeat | Type: std_msgs/msg/UInt32 | Count: 14 | Serialization Format: cdr
+                   Topic: /tyrant/payload_sim/health | Type: tyrant_payload_interfaces/msg/PayloadHealth | Count: 28 | Serialization Format: cdr
+                   Topic: /tyrant/payload_sim/sensor_power/status | Type: tyrant_payload_interfaces/msg/SensorPowerStatus | Count: 8 | Serialization Format: cdr
+                   Topic: /tyrant/payload_sim/power/thruster | Type: tyrant_payload_interfaces/msg/PayloadPower | Count: 142 | Serialization Format: cdr
+                   Topic: /tyrant/payload_sim/communication/diagnostics | Type: tyrant_payload_interfaces/msg/PayloadCommunicationDiagnostics | Count: 14 | Serialization Format: cdr
+                   Topic: /tyrant/mission/status | Type: tyrant_interfaces/msg/MissionStatus | Count: 76 | Serialization Format: cdr
+                   Topic: /tyrant/system/health | Type: tyrant_interfaces/msg/SystemHealth | Count: 71 | Serialization Format: cdr
+                   Topic: /tyrant/sensors/pressure | Type: tyrant_interfaces/msg/PressureTelemetry | Count: 71 | Serialization Format: cdr
+                   Topic: /tyrant/sensors/imu | Type: tyrant_interfaces/msg/ImuTelemetry | Count: 71 | Serialization Format: cdr
+                   Topic: /tyrant/host/mission/status | Type: std_msgs/msg/String | Count: 142 | Serialization Format: cdr
+                   Topic: /tyrant/simple_state | Type: tyrant_interfaces/msg/SimpleState | Count: 71 | Serialization Format: cdr
+                   Topic: /tyrant/communication/diagnostics | Type: tyrant_interfaces/msg/CommunicationDiagnostics | Count: 14 | Serialization Format: cdr
+                   Topic: /tyrant/control/wrench_request | Type: tyrant_interfaces/msg/WrenchRequest | Count: 698 | Serialization Format: cdr
+                   Topic: /tyrant/mission/command | Type: tyrant_interfaces/msg/MissionCommand | Count: 5 | Serialization Format: cdr
+                   Topic: /tyrant/control/thruster_command | Type: tyrant_interfaces/msg/ThrusterCommand | Count: 697 | Serialization Format: cdr
+                   Topic: /tyrant/actuation/status | Type: tyrant_interfaces/msg/ActuatorStatus | Count: 71 | Serialization Format: cdr
+                   Topic: /tyrant/mode/status | Type: tyrant_interfaces/msg/ModeStatus | Count: 145 | Serialization Format: cdr
+                   Topic: /tyrant/emergency/status | Type: tyrant_interfaces/msg/EmergencyStatus | Count: 71 | Serialization Format: cdr
+                   Topic: /tyrant/payload_sim/power/sensors | Type: tyrant_payload_interfaces/msg/PayloadPower | Count: 71 | Serialization Format: cdr
+                   Topic: /tyrant/payload_sim/water_quality | Type: tyrant_payload_interfaces/msg/PayloadWaterQuality | Count: 6 | Serialization Format: cdr
+

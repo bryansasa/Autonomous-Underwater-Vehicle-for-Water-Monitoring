@@ -1,0 +1,5 @@
+PASS simulation namespace, OFF/warm-up semantics, valid synthetic samples, no hardware IO
+PASS stable, transition-gradient and critical-DO scenarios drive EA-DSRA
+PASS battery dropout invalidation and low-battery energy penalty scenario
+PASS isolated EC failure, INA failure, old sample age and recovery in repeating cycle
+PASS simulation uses real heartbeat/command rules and OFF invalidates samples

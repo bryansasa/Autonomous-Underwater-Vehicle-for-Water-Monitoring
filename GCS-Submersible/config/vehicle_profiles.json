@@ -1,0 +1,27 @@
+{
+    "vehicle_name": "Tyrant-AQ AUV",
+    "hull_type": "Twin-Hull Acrylic 5-inch",
+    "degrees_of_freedom": 4,
+    "thruster_count": 6,
+    "thruster_layout": {
+        "horizontal": [
+            { "id": 1, "name": "Bow Port (Front-Left 45°)", "type": "M060", "esc_channel": 1 },
+            { "id": 2, "name": "Bow Starboard (Front-Right 45°)", "type": "M060", "esc_channel": 2 },
+            { "id": 3, "name": "Stern Port (Rear-Left 45°)", "type": "M060", "esc_channel": 3 },
+            { "id": 4, "name": "Stern Starboard (Rear-Right 45°)", "type": "M060", "esc_channel": 4 }
+        ],
+        "vertical": [
+            { "id": 5, "name": "Heave Port (Left Vertical)", "type": "M060", "esc_channel": 5 },
+            { "id": 6, "name": "Heave Starboard (Right Vertical)", "type": "M060", "esc_channel": 6 }
+        ]
+    },
+    "sensors": {
+        "depth": "Blue Robotics Bar30 (MS5837-30BA)",
+        "imu": "WitMotion HWT905 MARG 9-Axis",
+        "power": "TI INA226 (6S LiPo)",
+        "ph": "Atlas Scientific EZO pH Kit",
+        "do": "Atlas Scientific EZO DO Kit",
+        "conductivity": "Atlas Scientific K 1.0 + EZO",
+        "temperature": "Blue Robotics Celsius TSY01"
+    }
+}

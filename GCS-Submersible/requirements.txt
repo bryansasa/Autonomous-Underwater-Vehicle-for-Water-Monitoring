@@ -1,0 +1,8 @@
+# Tyrant-AQ AUV Ground Control Station (GCS) Dependencies
+PyQt5>=5.15.0
+pyqtgraph>=0.13.0
+pyserial>=3.5
+opencv-python-headless>=4.8.0
+websockets>=12.0
+numpy>=1.24.0
+reportlab>=4.0.0

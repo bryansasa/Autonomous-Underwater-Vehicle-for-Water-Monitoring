@@ -1,0 +1,6 @@
+uint8 TRIGGER_ZERO_THRUST=1
+uint8 TRIGGER_CONTROLLED_SURFACE=2
+uint8 COMMAND_STATUS=255
+
+uint32 request_id
+uint8 command

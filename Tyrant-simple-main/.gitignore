@@ -1,0 +1,33 @@
+# PlatformIO
+.pio/
+.vscode/
+
+# ROS 2 / colcon
+ros2_ws/build/
+ros2_ws/install/
+ros2_ws/log/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+firmware/esp/host_ws/build.before-relocation/
+firmware/esp/host_ws/install.before-relocation/
+
+# Editor / OS
+*.swp
+.DS_Store
+
+**/.pio/
+**/.pio-core/
+**/.native-test/
+**/host_ws/
+**/build/
+**/install/
+**/log/
+**/bags/
+**/dist/
+**/*.db3
+**/*.mcap
+**/__pycache__/
+**/.pytest_cache/

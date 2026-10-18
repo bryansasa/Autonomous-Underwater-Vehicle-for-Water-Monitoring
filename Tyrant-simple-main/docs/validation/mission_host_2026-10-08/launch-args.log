@@ -1,0 +1,33 @@
+Arguments (pass arguments as '<name>:=<value>'):
+
+    'plan':
+        no description given
+        (default: '/home/charisto/tyrant-simple/ros2_ws/install/tyrant_mission_host/share/tyrant_mission_host/config/two_depth_hil.yaml')
+
+    'payload_namespace':
+        no description given
+        (default: '/tyrant/payload_sim')
+
+    'teensy_simulated':
+        no description given
+        (default: 'true')
+
+    'output_dir':
+        no description given
+        (default: '/home/charisto/tyrant_missions')
+
+    'start_agents':
+        no description given
+        (default: 'false')
+
+    'teensy_port':
+        no description given
+        (default: '/dev/tyrant-teensy')
+
+    'esp_port':
+        no description given
+        (default: '/dev/tyrant-esp')
+
+    'publish_heartbeats':
+        no description given
+        (default: 'true')

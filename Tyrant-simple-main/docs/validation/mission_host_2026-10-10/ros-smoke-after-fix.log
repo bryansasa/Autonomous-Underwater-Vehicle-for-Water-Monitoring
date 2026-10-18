@@ -1,0 +1,29 @@
+[INFO] [1791567751.945739421] [tyrant_mission_host]: Ready; no motion until /tyrant/host/mission/start. Payload namespace: /tyrant/payload_sim
+[INFO] [1791567752.046248618] [rosbag2_storage]: Opened database '/tmp/tyrant-host-smoke-umshuf18/sessions/20261009T174232Z_863e3593/bag/bag_0.db3' for READ_WRITE.
+[INFO] [1791567752.047841762] [tyrant_mission_host]: Recording: /tmp/tyrant-host-smoke-umshuf18/sessions/20261009T174232Z_863e3593
+[INFO] [1791567753.299810328] [tyrant_mission_host]: {"event": "step_result", "monotonic_s": 6118.523921161, "step_id": "sample_1", "complete": true, "reason": "Per-sensor valid sample targets met", "counts": {"conductivity": 2, "ph": 2, "temperature": 2, "dissolved_oxygen": 2}}
+[INFO] [1791567753.449444145] [tyrant_mission_host]: {"event": "step_result", "monotonic_s": 6118.673659548, "step_id": "move", "complete": true, "reason": "Motion completed", "counts": {"conductivity": 0, "ph": 0, "temperature": 0, "dissolved_oxygen": 0}}
+[INFO] [1791567753.450628326] [tyrant_mission_host]: {"event": "mission_result", "monotonic_s": 6118.674842796, "step_id": "move", "state": "COMPLETE", "reason": "All host steps finished"}
+[INFO] [1791567755.502227427] [rosbag2_storage]: Opened database '/tmp/tyrant-host-smoke-umshuf18/sessions/20261009T174232Z_863e3593/bag/bag_0.db3' for READ_ONLY.
+[INFO] [1791567755.504754522] [rosbag2_storage]: Opened database '/tmp/tyrant-host-smoke-umshuf18/sessions/20261009T174235Z_b31d9178/bag/bag_0.db3' for READ_WRITE.
+[INFO] [1791567755.505287298] [tyrant_mission_host]: Recording: /tmp/tyrant-host-smoke-umshuf18/sessions/20261009T174235Z_b31d9178
+[INFO] [1791567755.853690214] [rosbag2_storage]: Opened database '/tmp/tyrant-host-smoke-umshuf18/sessions/20261009T174235Z_dfabdc4a/bag/bag_0.db3' for READ_WRITE.
+[INFO] [1791567755.854224829] [tyrant_mission_host]: Recording: /tmp/tyrant-host-smoke-umshuf18/sessions/20261009T174235Z_dfabdc4a
+[INFO] [1791567758.037842009] [tyrant_mission_host]: {"event": "step_result", "monotonic_s": 6123.261945289, "step_id": "sample_1", "complete": false, "reason": "Sampling/stabilization timeout", "counts": {"conductivity": 0, "ph": 3, "temperature": 3, "dissolved_oxygen": 3}}
+[INFO] [1791567758.157268221] [tyrant_mission_host]: {"event": "step_result", "monotonic_s": 6123.373544992, "step_id": "move", "complete": true, "reason": "Motion completed", "counts": {"conductivity": 0, "ph": 0, "temperature": 0, "dissolved_oxygen": 0}}
+[INFO] [1791567758.158570068] [tyrant_mission_host]: {"event": "mission_result", "monotonic_s": 6123.382783061, "step_id": "move", "state": "COMPLETE", "reason": "All host steps finished"}
+[INFO] [1791567760.202777385] [rosbag2_storage]: Opened database '/tmp/tyrant-host-smoke-umshuf18/sessions/20261009T174240Z_a17560de/bag/bag_0.db3' for READ_WRITE.
+[INFO] [1791567760.203344210] [tyrant_mission_host]: Recording: /tmp/tyrant-host-smoke-umshuf18/sessions/20261009T174240Z_a17560de
+[INFO] [1791567761.402945134] [tyrant_mission_host]: {"event": "step_result", "monotonic_s": 6126.625905374, "step_id": "sample_1", "complete": true, "reason": "Per-sensor valid sample targets met", "counts": {"conductivity": 2, "ph": 2, "temperature": 2, "dissolved_oxygen": 2}}
+[INFO] [1791567761.451701692] [tyrant_mission_host]: {"event": "step_result", "monotonic_s": 6126.674834592, "step_id": "move", "complete": false, "reason": "Teensy state invalid", "counts": {"conductivity": 0, "ph": 0, "temperature": 0, "dissolved_oxygen": 0}}
+[INFO] [1791567761.452325142] [tyrant_mission_host]: {"event": "mission_result", "monotonic_s": 6126.674834592, "step_id": "move", "state": "FAILED", "reason": "Teensy state invalid"}
+[INFO] [1791567763.507203186] [rosbag2_storage]: Opened database '/tmp/tyrant-host-smoke-umshuf18/sessions/20261009T174243Z_b7bb7fe8/bag/bag_0.db3' for READ_WRITE.
+[INFO] [1791567763.508611819] [tyrant_mission_host]: Recording: /tmp/tyrant-host-smoke-umshuf18/sessions/20261009T174243Z_b7bb7fe8
+[INFO] [1791567765.203456407] [tyrant_mission_host]: {"event": "step_result", "monotonic_s": 6130.426182534, "step_id": "sample_1", "complete": true, "reason": "Per-sensor valid sample targets met", "counts": {"conductivity": 2, "ph": 2, "temperature": 2, "dissolved_oxygen": 2}}
+[INFO] [1791567765.738767516] [tyrant_mission_host]: {"event": "step_result", "monotonic_s": 6130.962218037, "step_id": "move", "complete": false, "reason": "Teensy state stale or missing", "counts": {"conductivity": 0, "ph": 0, "temperature": 0, "dissolved_oxygen": 0}}
+[INFO] [1791567765.739334671] [tyrant_mission_host]: {"event": "mission_result", "monotonic_s": 6130.962218037, "step_id": "move", "state": "FAILED", "reason": "Teensy state stale or missing"}
+PASS ROS: invalid state during motion aborts in 0.037s; STOP/SAFE/OFF received and failed step recorded
+PASS ROS: stale state during motion aborts in 0.523s; STOP/SAFE/OFF received and failed step recorded
+PASS ROS: explicit start, two board heartbeats, sequential power ACK, two host steps, per-sensor sampling, finalized bag/CSV, manual recording
+PASS ROS: at-point power policy, failed sensor marks incomplete point, mission continues to motion step
+Artifacts: /tmp/tyrant-host-smoke-umshuf18

@@ -1,0 +1,122 @@
+{
+  "configById": {
+    "AttitudePlot!1": {
+      "paths": [
+        {
+          "value": "/auv/attitude.depth",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "color": "#00D2FF"
+        },
+        {
+          "value": "/auv/attitude.target_depth",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "color": "#2ECC71"
+        }
+      ],
+      "showLegend": true,
+      "xAxisVal": "timestamp",
+      "title": "Depth (Z) & Target Depth (m)"
+    },
+    "WaterQualityPlot!2": {
+      "paths": [
+        {
+          "value": "/auv/water_quality.ph",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "color": "#3B82F6"
+        },
+        {
+          "value": "/auv/water_quality.do_mg_l",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "color": "#10B981"
+        },
+        {
+          "value": "/auv/water_quality.temp_c",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "color": "#F59E0B"
+        },
+        {
+          "value": "/auv/water_quality.cond_us_cm",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "color": "#8B5CF6"
+        }
+      ],
+      "showLegend": true,
+      "xAxisVal": "timestamp",
+      "title": "Kualitas Air Saguling (pH, DO, Suhu, Konduktivitas)"
+    },
+    "PowerPlot!3": {
+      "paths": [
+        {
+          "value": "/auv/power.battery_v",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "color": "#EF4444"
+        },
+        {
+          "value": "/auv/power.current_a",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "color": "#F97316"
+        },
+        {
+          "value": "/auv/power.soc_kalman",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "color": "#10B981"
+        }
+      ],
+      "showLegend": true,
+      "xAxisVal": "timestamp",
+      "title": "Daya & Baterai (V, A, SoC %)"
+    },
+    "DiagnosticsTable!4": {
+      "topicPath": "/auv/diagnostics"
+    },
+    "ThrusterPlot!5": {
+      "paths": [
+        { "value": "/auv/thrusters.pwm1", "enabled": true, "color": "#00D2FF" },
+        { "value": "/auv/thrusters.pwm2", "enabled": true, "color": "#3B82F6" },
+        { "value": "/auv/thrusters.pwm3", "enabled": true, "color": "#8B5CF6" },
+        { "value": "/auv/thrusters.pwm4", "enabled": true, "color": "#EC4899" },
+        { "value": "/auv/thrusters.pwm5", "enabled": true, "color": "#10B981" },
+        { "value": "/auv/thrusters.pwm6", "enabled": true, "color": "#F59E0B" }
+      ],
+      "showLegend": true,
+      "xAxisVal": "timestamp",
+      "title": "Propulsi 6 Thruster (PWM µs)"
+    }
+  },
+  "globalVariables": {},
+  "userNodes": {},
+  "linkedGlobalVariables": [],
+  "playbackConfig": {
+    "speed": 1
+  },
+  "layout": {
+    "direction": "row",
+    "first": {
+      "direction": "column",
+      "first": "AttitudePlot!1",
+      "second": "ThrusterPlot!5",
+      "splitPercentage": 50
+    },
+    "second": {
+      "direction": "column",
+      "first": "WaterQualityPlot!2",
+      "second": {
+        "direction": "row",
+        "first": "PowerPlot!3",
+        "second": "DiagnosticsTable!4",
+        "splitPercentage": 60
+      },
+      "splitPercentage": 50
+    },
+    "splitPercentage": 50
+  }
+}

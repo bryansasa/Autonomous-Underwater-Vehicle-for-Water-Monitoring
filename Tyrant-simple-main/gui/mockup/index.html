@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+  <!-- Three.js & STLLoader via CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/STLLoader.js"></script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tyrant · Console simulasi</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+
+<body>
+  <header class="topbar">
+    <a class="brand" href="#operasi">
+      <img src="assets/logo_spell.png" alt="SPELL Laboratory" style="height: 32px; width: auto; object-fit: contain;">
+      <span>TYRANT<small>SPELL LABORATORY CONSOLE</small></span>
+    </a>
+    <span class="badge sim">SIMULASI · OFFLINE</span>
+    <div class="top-status"><span id="connection" class="connected">● Link simulasi</span><label
+        class="top-mode"><span>MODE</span><select id="mode" aria-label="Mode kendaraan">
+          <option>IDLE</option>
+          <option>MANUAL</option>
+          <option>AUTO</option>
+          <option>SAFE</option>
+        </select></label><span id="mode-badge" hidden>IDLE</span><span id="rec-badge">REC OFF</span></div>
+    <button id="stop" class="danger">Stop / SAFE</button>
+  </header>
+  <nav class="tabs" role="tablist" aria-label="Window console">
+    <button id="tab-operasi" role="tab" aria-controls="operasi" aria-selected="true" data-tab="operasi">01
+      <span>Operasi</span></button>
+    <button id="tab-misi" role="tab" aria-controls="misi" aria-selected="false" data-tab="misi">02 <span>Kontrol &
+        Misi</span></button>
+    <button id="tab-grafik" role="tab" aria-controls="grafik" aria-selected="false" data-tab="grafik">03 <span>Grafik &
+        Rekaman</span></button>
+    <button id="tab-diagnostik" role="tab" aria-controls="diagnostik" aria-selected="false" data-tab="diagnostik">04
+      <span>Diagnostik & Tuning</span></button>
+  </nav>
+  <main>
+    <div class="page-heading">
+      <div>
+        <p class="eyebrow">TYRANT / <span id="window-label">OPERASI</span></p>
+        <h1 id="page-title">Pandangan kendaraan</h1>
+      </div>
+      <div class="clock"><span id="clock"></span><small>Data contoh · tidak terhubung ke board</small></div>
+    </div>
+    <section id="operasi" role="tabpanel" aria-labelledby="tab-operasi">
+      <div class="readiness-bar">
+        <div><span id="ready-light" class="status-light"></span><strong id="ready-title">Siap simulasi</strong><span
+            id="ready-reason">Depth, attitude dan heartbeat valid pada preview</span></div><span id="telemetry-age"
+          class="age-chip">Data 0.0 s · SIM</span>
+      </div>
+      <div class="operation-grid">
+        <div class="navigation-stack">
+
+          <article id="camera-panel" class="panel camera-panel">
+            <div class="panel-heading camera-toolbar">
+              <div><span class="camera-dot"></span>
+                <h2>Kamera depan</h2><span class="subtle">USB / PREVIEW</span>
+              </div>
+              <div class="camera-actions"><span id="camera-link">SIM</span><span id="camera-rec">REC OFF</span><span
+                  id="camera-mode">IDLE</span><button id="fullscreen"
+                  aria-label="Perbesar kamera"><span>Fullscreen</span></button><button id="camera-stop" class="danger"
+                  hidden>Stop / SAFE</button><button id="camera-close" hidden>Tutup ✕</button></div>
+            </div>
+            <div class="camera-placeholder">
+              <div class="camera-frame"></div>
+              <div class="camera-horizon"></div>
+              <div class="attitude-overlay"><svg viewBox="0 0 200 130" role="img"
+                  aria-label="Attitude indicator simulasi">
+                  <g id="attitude-horizon">
+                    <path d="M15 65H75M125 65H185" />
+                    <path d="M60 45H80M120 45H140M70 25H85M115 25H130M60 85H80M120 85H140M70 105H85M115 105H130" /><text
+                      x="145" y="48">10</text><text x="145" y="88">−10</text>
+                  </g>
+                  <path class="fixed-wings" d="M55 65H85L100 73L115 65H145" />
+                </svg><span id="attitude-status">ROLL 4° · PITCH −3° · SIM</span></div>
+              <div class="camera-caption"><span class="camera-symbol">◎</span>
+                <h3>Belum ada video</h3>
+                <p>Webcam akan tampil di sini setelah integrasi Jetson</p>
+              </div>
+              <div class="camera-hud">
+                <div><span>DEPTH · SIM</span><strong id="hud-depth">1.20 <small>m</small></strong></div>
+                <div><span id="hud-heading-label">HEADING ASLI · SIM</span><strong id="hud-heading">042
+                    <small>°</small></strong></div>
+                <div class="hud-rec"><span>REKAMAN</span><strong id="hud-record">OFF</strong></div>
+              </div>
+              <div class="camera-bottom"><span>VIDEO OFFLINE</span><span>720p / 15 fps · target integrasi</span></div>
+            </div>
+          </article>
+          <div class="instruments">
+            <div class="instrument-heading">
+              <h2>Navigasi kendaraan</h2><span class="subtle">Orientasi & sumbu Z · SIM</span>
+            </div>
+            <article class="panel orientation-panel">
+              <div class="panel-heading">
+                <h2>Orientasi</h2><span class="quality-tag">VALID · SIM</span>
+              </div>
+              <div class="scene">
+                <div id="submersible-3d-canvas" style="width: 100%; height: 135px; position: relative;"></div>
+                <div class="scene-grid"></div>
+                <div id="robot" class="robot">
+                  <div class="robot-body">TYRANT <span>DEPAN →</span></div><i class="float left"></i><i
+                    class="float right"></i><i class="thruster t1"></i><i class="thruster t2"></i>
+                </div>
+              </div>
+              <div class="triple-values"><span>ROLL<strong id="roll-value">4.0°</strong></span><span>PITCH<strong
+                    id="pitch-value">−3.0°</strong></span><span>YAW<strong id="yaw-value">42.0°</strong></span></div>
+              <small class="subtle">Orientasi contoh, bukan posisi XY</small>
+            </article>
+            <article class="panel">
+              <div class="panel-heading">
+                <h2>Kedalaman</h2><span class="quality-tag">VALID · SIM</span>
+              </div>
+              <div class="depth-instrument">
+                <div class="depth-scale"><span>0 m</span><span>5 m</span><span>10 m</span></div>
+                <div class="depth-track">
+                  <div id="depth-marker" class="depth-marker"></div>
+                </div>
+                <div><span class="subtle">AKTUAL · SIM</span><strong class="big-value"><span
+                      id="depth-value">1.20</span><small> m</small></strong><span id="depth-target"
+                    class="subtle">Target —</span></div>
+              </div>
+            </article>
+            <article class="panel">
+              <div class="panel-heading">
+                <h2 id="compass-title">Kompas asli</h2><span class="quality-tag">VALID · SIM</span>
+              </div>
+              <div class="compass"><span class="north">N</span><span class="east">E</span><span
+                  class="south">S</span><span class="west">W</span>
+                <div id="compass-needle" class="needle"></div>
+              </div>
+              <div class="compass-value"><strong id="heading-value">42°</strong><small id="heading-basis">HEADING ASLI ·
+                  SIM</small><small id="heading-raw"></small></div>
+            </article>
+          </div>
+        </div>
+        <aside class="payload-stack">
+          <article class="mission-peek">
+            <div class="panel-heading">
+              <h2>Misi aktif</h2><span id="peek-status" class="badge">IDLE</span>
+            </div><strong id="peek-step">Belum ada misi</strong><span id="peek-target">Susun rencana di Kontrol &
+              Misi</span>
+            <div class="mission-track">
+              <div id="peek-progress"></div>
+            </div>
+            <div class="peek-details"><span id="peek-error">Selisih depth —</span><span id="peek-samples">Sampel
+                0</span></div><button id="open-planner">Buka planner →</button>
+          </article>
+          <article class="panel">
+            <div class="panel-heading">
+              <h2>Kualitas air</h2><span class="subtle">ESP-S3 · SIM</span>
+            </div>
+            <div id="sensor-cards" class="sensor-grid"></div>
+            <p class="footnote">ON/OFF adalah contoh status perintah MOSFET.</p>
+          </article>
+          <article class="panel">
+            <div class="panel-heading">
+              <h2>Monitoring daya</h2><span id="power-valid" class="quality-tag">INA226 · SIM</span>
+            </div>
+            <div class="power-row"><span>Thruster / 6S<small>Bus daya utama</small></span><strong
+                data-power-value="24.8 V">24.8 <small>V</small></strong><strong data-power-value="3.20 A">3.20
+                <small>A</small></strong></div>
+            <div class="power-row"><span>Rel sensor<small>Gabungan empat sensor</small></span><strong
+                data-power-value="12.1 V">12.1 <small>V</small></strong><strong id="sensor-current">0.32
+                <small>A</small></strong></div>
+            <div class="power-summary"><span>Daya thruster <strong id="power-thruster">79.4 W ·
+                  sim</strong></span><span>Daya rel sensor <strong id="power-sensors">3.9 W · sim</strong></span></div>
+            <p class="footnote">Arus rel sensor bukan arus tiap sensor.</p>
+          </article>
+          <article class="panel connection-panel">
+            <div class="panel-heading">
+              <h2>Koneksi perangkat</h2><span class="subtle">SIM</span>
+            </div>
+            <div class="connection-list"><span>Backend <b class="link-state">Simulasi</b></span><span>Teensy / heartbeat
+                <b class="link-state">Simulasi</b></span><span>ESP / heartbeat <b
+                  class="link-state">Simulasi</b></span><span>Kamera <b class="warning">Belum tersedia</b></span></div>
+          </article>
+        </aside>
+      </div>
+    </section>
+    <section id="misi" role="tabpanel" aria-labelledby="tab-misi" hidden>
+      <div class="control-grid">
+        <article class="panel">
+          <div class="panel-heading">
+            <h2>Kendali manual</h2><span class="badge">SIM</span>
+          </div><label class="field">Sumber input<select id="input-source">
+              <option value="keyboard">Keyboard laptop</option>
+              <option value="controller">Controller laptop / HP</option>
+            </select></label>
+          <p id="input-help" class="subtle">W/S maju · A/D geser · Q/E yaw · R/F vertikal</p>
+          <div class="manual-meter"><span id="manual-status">Pilih MANUAL, lalu tahan Space</span><strong
+              id="manual-axes">Surge 0 · Sway 0 · Heave 0 · Yaw 0</strong></div><label class="field">Skala input manual
+            <span id="input-scale-value">40%</span><input id="input-scale" type="range" min="0" max="100"
+              value="40"></label>
+          <p class="footnote">Space = deadman. Lepas/fokus hilang = netral. Preview tidak mengirim gerak.</p>
+          <div id="gamepad-state" class="subtle">Controller belum diperiksa</div>
+        </article>
+        <article class="panel">
+          <div class="panel-heading">
+            <h2>Referensi & target</h2><button id="reference-help-button" aria-expanded="false"
+              aria-controls="reference-help" aria-label="Penjelasan referensi depth dan yaw">?</button>
+          </div>
+          <div id="reference-help" class="reference-help" hidden>
+            <p><strong>Set Surface:</strong> menetapkan nol tekanan di permukaan saat IDLE. Bukan perintah naik.</p>
+            <p><strong>Referensi yaw:</strong> heading asli tetap disimpan. Jika arah menghadap 37° dijadikan nol, yaw
+              misi 0° berarti heading asli 37°; target misi 90° berarti heading asli 127°. Mematikan referensi
+              mengembalikan tampilan dan target ke heading asli. Ini bukan kalibrasi magnetometer atau posisi XY.</p>
+            <p>Referensi tidak dapat diubah ketika misi aktif. Target dikonversi ke heading asli saat membuat snapshot
+              misi.</p>
+          </div>
+          <div class="yaw-reference"><label><input id="yaw-reference-enabled" type="checkbox"> Gunakan nol yaw
+              misi</label>
+            <div class="fields"><label class="field">Heading asli untuk nol (°)<input id="yaw-offset" type="number"
+                  min="0" max="359.999" step="any" value="0"></label><button id="yaw-zero-current">Arah sekarang =
+                0°</button></div>
+            <p id="yaw-reference-summary" class="subtle">Default: heading asli magnetometer</p>
+          </div>
+          <div class="fields"><label class="field">Target depth (m)<input id="target-depth" type="number" min="0"
+                max="10" step="0.1" value="1"></label><label class="field"><span id="target-heading-label">Heading asli
+                (°)</span><input id="target-heading" type="number" min="0" max="359" value="90"></label></div>
+          <div class="actions"><button id="apply-target" class="primary">Terapkan target contoh</button><button
+              id="surface">Naik ke permukaan</button><button id="zero-depth">Set Surface / nol</button></div>
+          <p class="footnote">Set Surface adalah kalibrasi nol saat IDLE. Interface target langsung masih perlu
+            dibangun.</p>
+        </article>
+      </div>
+      <article class="panel planner">
+        <div class="panel-heading">
+          <div>
+            <h2>Mission planner</h2>
+            <p class="subtle">Lintasan rencana · tanpa estimasi posisi XY</p>
+          </div><span id="mission-state" class="badge">IDLE</span>
+        </div>
+        <div class="plan-settings"><label class="field">Daya sensor<select id="sampling-policy">
+              <option value="throughout">Sepanjang perjalanan</option>
+              <option value="at_point">Hanya di titik sampling</option>
+            </select></label><label class="field">Toleransi depth (± m)<input id="tolerance" type="number" min="0.01"
+              max="2" step="any" value="0.2"></label><label class="field">Jendela penanda stabil (s)<input
+              id="stable-time" type="number" min="1" max="30" value="3"></label><label class="field">Sampel /
+            sensor<input id="sample-count" type="number" min="1" max="50" value="3"></label></div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Langkah</th>
+                <th>Jenis</th>
+                <th>Target / durasi</th>
+                <th>Effort (%)</th>
+                <th>Timeout (s)</th>
+                <th>Toleransi</th>
+                <th>Sampling</th>
+                <th>Waktu sampel</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="steps"></tbody>
+          </table>
+        </div>
+        <div class="planner-bottom">
+          <div class="actions"><button id="add-step">+ Tambah langkah</button><button id="start-mission"
+              class="primary">Mulai misi simulasi</button></div><span id="mission-progress" class="subtle">Belum ada
+            misi aktif</span>
+        </div>
+        <p class="footnote">Sampling dapat diaktifkan pada semua jenis langkah, selama gerak atau setelah selesai. Depth
+          berubah tetap dicatat dengan penanda. Pilih AUTO di bar atas untuk mulai. Preview mempercepat waktu langkah;
+          hasilnya tidak memvalidasi firmware atau sensor.</p>
+      </article>
+    </section>
+    <section id="grafik" role="tabpanel" aria-labelledby="tab-grafik" hidden>
+      <article class="panel">
+        <div class="panel-heading">
+          <div>
+            <h2>Tren kualitas air</h2>
+            <p class="subtle">Titik = pembacaan contoh · celah = tidak valid · arahkan kursor atau sentuh untuk detail
+            </p>
+          </div><button id="record" class="primary">Mulai rekaman contoh</button>
+        </div>
+        <div class="chart-controls"><label>Rentang waktu<select id="chart-window">
+              <option value="60">1 menit</option>
+              <option value="300">5 menit</option>
+              <option value="900">15 menit</option>
+            </select></label><button id="chart-pause" aria-pressed="false">Bekukan tampilan</button><span
+            class="subtle">Rekaman tetap berjalan ketika grafik dibekukan</span></div>
+        <div id="charts" class="charts"></div>
+      </article>
+      <div class="control-grid bottom-grid">
+        <article class="panel">
+          <div class="panel-heading">
+            <h2>Sampel per kedalaman</h2><span class="subtle">SIMULASI</span>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Depth</th>
+                  <th>EC (µS/cm)</th>
+                  <th>pH</th>
+                  <th>Suhu (°C)</th>
+                  <th>DO (mg/L)</th>
+                  <th>Kondisi depth</th>
+                </tr>
+              </thead>
+              <tbody id="sample-rows">
+                <tr>
+                  <td colspan="6" class="empty">Belum ada sampel misi simulasi</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+        <article class="panel">
+          <div class="panel-heading">
+            <h2>Sesi rekaman</h2><span class="subtle">MEMORI PREVIEW</span>
+          </div>
+          <div id="sessions" class="empty">Belum ada sesi</div>
+          <p class="footnote">Unduhan CSV hanya berisi data simulasi. Refresh menghapus sesi preview.</p>
+        </article>
+      </div>
+    </section>
+    <section id="diagnostik" role="tabpanel" aria-labelledby="tab-diagnostik" hidden>
+      <div class="control-grid">
+        <article class="panel">
+          <div class="panel-heading">
+            <h2>Diagnostik koneksi</h2><span class="badge">SIM</span>
+          </div><label class="field">Skenario preview<select id="scenario">
+              <option value="normal">Normal · telemetry valid</option>
+              <option value="invalid">Sensor tidak valid</option>
+              <option value="payload_hb_lost">Heartbeat host ESP timeout</option>
+              <option value="disconnected">Link terputus</option>
+            </select></label>
+          <div class="diagnostics"><span>Host heartbeat <strong id="heartbeat-value">63 ms ·
+                contoh</strong></span><span>Disconnect / reconnect <strong>0 / 0 · contoh</strong></span><span>Ping /
+              publish failures <strong>0 / 0 · contoh</strong></span><span>Propulsion hardware <strong>Tidak
+                terhubung</strong></span></div>
+          <div class="fields"><label class="field">Roll contoh (°)<input id="roll-input" type="range" min="-30" max="30"
+                value="4"></label><label class="field">Pitch contoh (°)<input id="pitch-input" type="range" min="-30"
+                max="30" value="-3"></label><label class="field">Yaw contoh (°)<input id="yaw-input" type="range"
+                min="0" max="359" value="42"></label></div>
+        </article>
+        <article class="panel">
+          <div class="panel-heading">
+            <h2>Tuning & batas thruster</h2><span class="subtle">USULAN INTERFACE</span>
+          </div>
+          <p class="subtle">Controller sekarang: depth P, attitude/heading PD.</p>
+          <div class="fields"><label class="field">Depth Kp<input value="0.8" readonly></label><label
+              class="field">Heading Kp<input value="1.5" readonly></label></div><label class="field">Batas output
+            ternormalisasi <span id="limit-draft">60%</span><input id="thruster-limit" type="range" min="0" max="100"
+              value="60"></label>
+          <div class="actions"><button id="apply-limit" class="primary">Apply contoh · IDLE</button><span
+              id="limit-active" class="subtle">Aktif: 60% · contoh</span></div>
+          <p class="footnote">Bukan persentase gaya fisik. Enforcement di Teensy belum dibuat; tidak mengubah hardware.
+          </p>
+          <div class="future">
+            <h3>LMPC · belum tersedia</h3>
+            <p>Parameter model, horizon dan bobot tampil setelah controller siap.</p>
+          </div>
+          <p class="footnote">EA-DSRA tetap hardcode. SysID tetap melalui terminal.</p>
+        </article>
+      </div>
+    </section>
+    <details class="log-panel">
+      <summary><span class="log-label">LOG</span><span id="log-latest">Console siap</span><span class="log-expand">Lihat
+          aktivitas</span></summary>
+      <div id="log" role="log" aria-live="polite"></div>
+    </details>
+    <div id="notice" class="notice" role="status" aria-live="polite">Preview siap. Semua nilai berasal dari simulasi
+      lokal.</div>
+  </main>
+  <dialog id="camera-dialog" aria-label="Kamera diperbesar"></dialog>
+  <footer><span>TYRANT · GUI CONCEPT 04</span><span>SIM ≠ DATA SENSOR RIIL · Tidak ada ROS / serial / backend</span>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+# ==============================================================================
+# GITIGNORE - TYRANT-AQ AUV (PROGRAM-YEN)
+# SPELL Laboratory - Telkom University
+# ==============================================================================
+
+# --- Large Archives & Binaries (>100MB blocked by GitHub) ---
+*.rar
+*.zip
+*.7z
+*.tar.gz
+*.iso
+GCS-Submersible.rar
+
+# --- Python & Compiled Bytecode ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyd
+.pytest_cache/
+
+# --- Build & Packaging Artifacts (PyInstaller, setuptools, etc.) ---
+build/
+dist/
+**/build/
+**/dist/
+*.manifest
+*.spec.bak
+
+# --- Virtual Environments ---
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# --- ROS 2 & Colcon Build Directories ---
+ros2_ws/build/
+ros2_ws/install/
+ros2_ws/log/
+**/build.before-relocation/
+**/install.before-relocation/
+**/*.mcap
+**/*.db3
+
+# --- Microcontroller & Embedded (PlatformIO / Arduino) ---
+.pio/
+**/.pio/
+**/.pio-core/
+**/.native-test/
+**/host_ws/
+.cproject
+.project
+
+# --- Telemetry Recordings & Data Logs ---
+data_logs/*.csv
+data_logs/snapshots/*.jpg
+logs/*.csv
+logs/*.txt
+
+# --- IDEs & Editors ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini

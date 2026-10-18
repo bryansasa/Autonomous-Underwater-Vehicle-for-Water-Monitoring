@@ -1,0 +1,23 @@
+data: '{"mission_id": "two_depth_hil_sampling_020m", "phase": "IDLE", "step_id": null, "counts": {}, "payload_boot": 0, "result": null, "step_results": [], "all_sampling_points_complete": null}'
+---
+communication_healthy: true
+estimator_ready: true
+autonomy_ready: true
+propulsion_allowed: false
+current_mode: 4
+host_heartbeat_age_ms: 97
+---
+connection_state: 2
+agent_connected: true
+host_heartbeat_healthy: true
+host_heartbeat_age_ms: 101
+connection_count: 7
+disconnect_count: 6
+reconnect_count: 6
+host_heartbeat_timeout_count: 6
+ping_failures: 3308
+publish_failures: 86
+executor_failures: 0
+entity_create_failures: 0
+entity_destroy_failures: 0
+---

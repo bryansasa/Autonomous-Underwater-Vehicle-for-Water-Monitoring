@@ -1,0 +1,155 @@
+{
+  "session_id": "20261009T102835Z_11be845a",
+  "duration_s": 85.315360276,
+  "message_count": 16581,
+  "topic_counts": {
+    "/tyrant/control/wrench_request": 4184,
+    "/tyrant/control/thruster_command": 4183,
+    "/tyrant/mode/request": 16,
+    "/tyrant/mode/status": 866,
+    "/tyrant/mission/command": 23,
+    "/tyrant/mission/status": 449,
+    "/tyrant/payload_sim/sensor_power/request": 8,
+    "/tyrant/host_heartbeat": 853,
+    "/tyrant/payload_sim/host_heartbeat": 853,
+    "/tyrant/host/mission/status": 853,
+    "/tyrant/payload_sim/sensor_power/status": 8,
+    "/tyrant/simple_state": 426,
+    "/tyrant/sensors/imu": 426,
+    "/tyrant/sensors/pressure": 426,
+    "/tyrant/system/health": 426,
+    "/tyrant/actuation/status": 426,
+    "/tyrant/emergency/status": 426,
+    "/tyrant/payload_sim/power/thruster": 853,
+    "/tyrant/payload_sim/power/sensors": 426,
+    "/tyrant/communication/diagnostics": 86,
+    "/tyrant/payload_sim/health": 171,
+    "/tyrant/payload_sim/water_quality": 23,
+    "/tyrant/payload_sim/heartbeat": 85,
+    "/tyrant/payload_sim/communication/diagnostics": 85
+  },
+  "depth_validity": {
+    "valid": 426
+  },
+  "points": [
+    {
+      "step_id": "depth_1",
+      "qualified_per_sensor": {
+        "conductivity": 3,
+        "ph": 3,
+        "temperature": 3,
+        "dissolved_oxygen": 3
+      },
+      "estimated_depth_range_m": [
+        0.9676300883293152,
+        0.9677212834358215
+      ]
+    },
+    {
+      "step_id": "depth_3",
+      "qualified_per_sensor": {
+        "conductivity": 3,
+        "ph": 3,
+        "temperature": 3,
+        "dissolved_oxygen": 3
+      },
+      "estimated_depth_range_m": [
+        3.033581495285034,
+        3.0381436347961426
+      ]
+    }
+  ],
+  "esp_diagnostics_first": {
+    "connection_count": 2,
+    "disconnect_count": 1,
+    "ping_failures": 682,
+    "publish_failures": 14,
+    "host_heartbeat_timeout_count": 1,
+    "host_heartbeat_healthy": true
+  },
+  "esp_diagnostics_last": {
+    "connection_count": 2,
+    "disconnect_count": 1,
+    "ping_failures": 682,
+    "publish_failures": 14,
+    "host_heartbeat_timeout_count": 1,
+    "host_heartbeat_healthy": true
+  },
+  "result": {
+    "mission_id": "two_depth_hil_sampling_020m",
+    "phase": "COMPLETE",
+    "step_id": "depth_3",
+    "counts": {
+      "conductivity": 3,
+      "ph": 3,
+      "temperature": 3,
+      "dissolved_oxygen": 3
+    },
+    "payload_boot": 0,
+    "result": "All host steps finished",
+    "step_results": [
+      {
+        "step_id": "depth_1",
+        "sampling": true,
+        "complete": true,
+        "reason": "Per-sensor valid sample targets met",
+        "counts": {
+          "conductivity": 3,
+          "ph": 3,
+          "temperature": 3,
+          "dissolved_oxygen": 3
+        }
+      },
+      {
+        "step_id": "forward",
+        "sampling": false,
+        "complete": true,
+        "reason": "Motion completed",
+        "counts": {
+          "conductivity": 0,
+          "ph": 0,
+          "temperature": 0,
+          "dissolved_oxygen": 0
+        }
+      },
+      {
+        "step_id": "right",
+        "sampling": false,
+        "complete": true,
+        "reason": "Motion completed",
+        "counts": {
+          "conductivity": 0,
+          "ph": 0,
+          "temperature": 0,
+          "dissolved_oxygen": 0
+        }
+      },
+      {
+        "step_id": "heading_left",
+        "sampling": false,
+        "complete": true,
+        "reason": "Motion completed",
+        "counts": {
+          "conductivity": 0,
+          "ph": 0,
+          "temperature": 0,
+          "dissolved_oxygen": 0
+        }
+      },
+      {
+        "step_id": "depth_3",
+        "sampling": true,
+        "complete": true,
+        "reason": "Per-sensor valid sample targets met",
+        "counts": {
+          "conductivity": 3,
+          "ph": 3,
+          "temperature": 3,
+          "dissolved_oxygen": 3
+        }
+      }
+    ],
+    "all_sampling_points_complete": true
+  },
+  "scope": "Real board HIL with synthetic payload; offline bag decoding; not physical sensor or wet validation"
+}
