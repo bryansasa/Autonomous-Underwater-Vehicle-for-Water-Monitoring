@@ -2,7 +2,7 @@
 
 [![Telkom University](https://img.shields.io/badge/Telkom%20University-FTE%20Elektro-red.svg)](https://telkomuniversity.ac.id/)
 [![Laboratory](https://img.shields.io/badge/Laboratory-SPELL%20Lab-blue.svg)](#)
-[![ROS 2](https://img.shields.io/badge/ROS%202-Humble%20Hawksbill-green.svg)](https://docs.ros.org/en/humble/)
+[![ROS 2](https://img.shields.io/badge/ROS%202-Humble%20Hawksbill-green.svg)](https://docs.ros.org/en/humble/Releases/Release-Humble-Hawksbill.html)
 [![Hardware](https://img.shields.io/badge/Hardware-Teensy%204.1%20%7C%20ESP32--S3%20%7C%20Jetson-orange.svg)](#)
 [![Field Site](https://img.shields.io/badge/Field%20Site-Saguling%20Reservoir-teal.svg)](#)
 
