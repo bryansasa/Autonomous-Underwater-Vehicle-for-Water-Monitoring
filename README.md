@@ -10,7 +10,6 @@ Dokumentasi dan basis kode terpadu untuk penelitian Tugas Akhir wahana selam nir
 
 ---
 
-## 👥 Pengembang & Tim Peneliti
 * **Bryan Gabriel Izaac Sasabone** (NIM: 101022300195)
 * **Charisto Brilliant R.P** (NIM: 101022330187)
 * **Laboratorium:** *Signal Processing & Embedded Logic Laboratory (SPELL Lab)*  
