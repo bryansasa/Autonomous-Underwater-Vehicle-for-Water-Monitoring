@@ -62,14 +62,21 @@
                 <h2>Kamera depan</h2><span class="subtle">USB / PREVIEW</span>
               </div>
               <div class="camera-actions"><span id="camera-link">SIM</span><span id="camera-rec">REC OFF</span><span
-                  id="camera-mode">IDLE</span><button id="fullscreen"
+                  id="camera-mode">IDLE</span><button id="toggle-camera-btn"
+                  title="Nyalakan / Matikan Kamera (Webcam Laptop atau USB Fisik)"><span>📹 Buka Kamera</span></button><button id="fullscreen"
                   aria-label="Perbesar kamera"><span>Fullscreen</span></button><button id="camera-stop" class="danger"
                   hidden>Stop / SAFE</button><button id="camera-close" hidden>Tutup ✕</button></div>
             </div>
-            <div class="camera-placeholder">
-              <div class="camera-frame"></div>
-              <div class="camera-horizon"></div>
-              <div class="attitude-overlay"><svg viewBox="0 0 200 130" role="img"
+            <div class="camera-placeholder" style="position: relative; overflow: hidden;">
+              <!-- 1. Real Webcam / Jetson Stream Video Elements -->
+              <video id="camera-video" autoplay playsinline muted style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; display: none;"></video>
+              <img id="camera-stream" alt="Live AUV Camera Feed" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; display: none;" />
+              <!-- 2. Dynamic Underwater Simulation Canvas (active when camera is off) -->
+              <canvas id="camera-underwater-canvas" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;"></canvas>
+
+              <div class="camera-frame" style="z-index: 1;"></div>
+              <div class="camera-horizon" style="z-index: 1;"></div>
+              <div class="attitude-overlay" style="z-index: 2;"><svg viewBox="0 0 200 130" role="img"
                   aria-label="Attitude indicator simulasi">
                   <g id="attitude-horizon">
                     <path d="M15 65H75M125 65H185" />
@@ -78,17 +85,17 @@
                   </g>
                   <path class="fixed-wings" d="M55 65H85L100 73L115 65H145" />
                 </svg><span id="attitude-status">ROLL 4° · PITCH −3° · SIM</span></div>
-              <div class="camera-caption"><span class="camera-symbol">◎</span>
-                <h3>Belum ada video</h3>
-                <p>Webcam akan tampil di sini setelah integrasi Jetson</p>
+              <div class="camera-caption" id="camera-caption" style="z-index: 2;"><span class="camera-symbol" style="display:inline-block; font-size:24px;">🌊</span>
+                <h3 id="camera-feed-title">Simulasi Bawah Air Waduk</h3>
+                <p id="camera-feed-desc">Klik tombol "📹 Buka Kamera" di atas untuk menyalakan video langsung</p>
               </div>
-              <div class="camera-hud">
+              <div class="camera-hud" style="z-index: 2;">
                 <div><span>DEPTH · SIM</span><strong id="hud-depth">1.20 <small>m</small></strong></div>
                 <div><span id="hud-heading-label">HEADING ASLI · SIM</span><strong id="hud-heading">042
                     <small>°</small></strong></div>
                 <div class="hud-rec"><span>REKAMAN</span><strong id="hud-record">OFF</strong></div>
               </div>
-              <div class="camera-bottom"><span>VIDEO OFFLINE</span><span>720p / 15 fps · target integrasi</span></div>
+              <div class="camera-bottom" style="z-index: 2;"><span id="camera-video-status">FEED: SIMULASI AIR</span><span id="camera-video-fps">720p / 30 fps</span></div>
             </div>
           </article>
           <div class="instruments">

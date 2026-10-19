@@ -317,6 +317,147 @@
     previousOverflow = document.body.style.overflow; document.body.style.overflow = 'hidden';
     cameraDialog.showModal(); $('camera-close').focus();
   });
+
+  // --- LIVE CAMERA & UNDERWATER SIMULATION ENGINE ---
+  const camVideo = $('camera-video');
+  const camStream = $('camera-stream');
+  const camCanvas = $('camera-underwater-canvas');
+  const camCaption = $('camera-caption');
+  const toggleCamBtn = $('toggle-camera-btn');
+  const camStatus = $('camera-video-status');
+  let localMediaStream = null;
+
+  async function toggleCamera() {
+    if (!localMediaStream) {
+      try {
+        localMediaStream = await navigator.mediaDevices.getUserMedia({
+          video: { width: { ideal: 1280 }, height: { ideal: 720 } }
+        });
+        if (camVideo) {
+          camVideo.srcObject = localMediaStream;
+          camVideo.style.display = 'block';
+        }
+        if (camCanvas) camCanvas.style.display = 'none';
+        if (camCaption) camCaption.style.display = 'none';
+        if (toggleCamBtn) {
+          toggleCamBtn.innerHTML = '<span>⏹️ Matikan Kamera</span>';
+          toggleCamBtn.style.color = 'var(--red)';
+          toggleCamBtn.style.borderColor = '#794851';
+        }
+        if (camStatus) camStatus.textContent = '● LIVE · WEBCAM REAL';
+        $('camera-link').textContent = 'LIVE CAM';
+        $('camera-link').style.color = 'var(--green)';
+        note('Kamera webcam lokal/USB aktif.');
+      } catch (err) {
+        console.warn('Gagal membuka webcam:', err);
+        note('Izin webcam ditolak atau kamera tidak terdeteksi.');
+      }
+    } else {
+      localMediaStream.getTracks().forEach(track => track.stop());
+      localMediaStream = null;
+      if (camVideo) {
+        camVideo.srcObject = null;
+        camVideo.style.display = 'none';
+      }
+      if (camCanvas) camCanvas.style.display = 'block';
+      if (camCaption) camCaption.style.display = 'block';
+      if (toggleCamBtn) {
+        toggleCamBtn.innerHTML = '<span>📹 Buka Kamera</span>';
+        toggleCamBtn.style.color = 'var(--cyan)';
+        toggleCamBtn.style.borderColor = '#3e6569';
+      }
+      if (camStatus) camStatus.textContent = 'FEED: SIMULASI AIR';
+      $('camera-link').textContent = 'SIM';
+      $('camera-link').style.color = 'var(--amber)';
+      note('Kamera dimatikan · kembali ke simulasi air.');
+    }
+  }
+  if (toggleCamBtn) toggleCamBtn.addEventListener('click', toggleCamera);
+
+  function initUnderwaterSimulation() {
+    if (!camCanvas) return;
+    const ctx = camCanvas.getContext('2d');
+    let w = (camCanvas.width = camCanvas.parentElement ? camCanvas.parentElement.clientWidth : 640);
+    let h = (camCanvas.height = camCanvas.parentElement ? camCanvas.parentElement.clientHeight : 360);
+    window.addEventListener('resize', () => {
+      if (camCanvas.parentElement) {
+        w = camCanvas.width = camCanvas.parentElement.clientWidth;
+        h = camCanvas.height = camCanvas.parentElement.clientHeight;
+      }
+    });
+
+    const bubbles = Array.from({ length: 30 }, () => ({
+      x: Math.random() * (w || 640),
+      y: Math.random() * (h || 360),
+      radius: Math.random() * 3 + 1,
+      speed: Math.random() * 0.7 + 0.3,
+      wobble: Math.random() * Math.PI * 2,
+      wobbleSpeed: Math.random() * 0.03 + 0.01,
+      alpha: Math.random() * 0.4 + 0.2
+    }));
+
+    let t = 0;
+    function drawUnderwater() {
+      if (localMediaStream) {
+        requestAnimationFrame(drawUnderwater);
+        return;
+      }
+      t += 0.02;
+      ctx.clearRect(0, 0, w, h);
+
+      // Deep aquatic gradient
+      const grad = ctx.createLinearGradient(0, 0, 0, h);
+      grad.addColorStop(0, '#0f323a');
+      grad.addColorStop(0.5, '#092128');
+      grad.addColorStop(1, '#051217');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, w, h);
+
+      // Gentle caustics / sun rays
+      ctx.save();
+      ctx.globalCompositeOperation = 'screen';
+      for (let i = 0; i < 4; i++) {
+        const rayX = (w * (i + 1)) / 5 + Math.sin(t + i) * 20;
+        const rayGrad = ctx.createLinearGradient(rayX, 0, rayX + (i % 2 === 0 ? 30 : -30), h);
+        rayGrad.addColorStop(0, 'rgba(120, 221, 212, 0.12)');
+        rayGrad.addColorStop(0.7, 'rgba(120, 221, 212, 0.02)');
+        rayGrad.addColorStop(1, 'transparent');
+        ctx.fillStyle = rayGrad;
+        ctx.beginPath();
+        ctx.moveTo(rayX - 35, 0);
+        ctx.lineTo(rayX + 35, 0);
+        ctx.lineTo(rayX + 110, h);
+        ctx.lineTo(rayX - 40, h);
+        ctx.closePath();
+        ctx.fill();
+      }
+      ctx.restore();
+
+      // Floating bubbles
+      ctx.save();
+      bubbles.forEach(b => {
+        b.y -= b.speed;
+        b.wobble += b.wobbleSpeed;
+        b.x += Math.sin(b.wobble) * 0.3;
+        if (b.y < -10) {
+          b.y = h + 10;
+          b.x = Math.random() * w;
+        }
+        ctx.beginPath();
+        ctx.arc(b.x, b.y, b.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(180, 235, 230, ${b.alpha})`;
+        ctx.fill();
+        ctx.strokeStyle = `rgba(255, 255, 255, ${b.alpha * 1.5})`;
+        ctx.lineWidth = 0.5;
+        ctx.stroke();
+      });
+      ctx.restore();
+
+      requestAnimationFrame(drawUnderwater);
+    }
+    requestAnimationFrame(drawUnderwater);
+  }
+  initUnderwaterSimulation();
   $('reference-help-button').addEventListener('click', () => {
     const open = $('reference-help').hidden; $('reference-help').hidden = !open;
     $('reference-help-button').setAttribute('aria-expanded', String(open));
